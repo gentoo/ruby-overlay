@@ -2,6 +2,11 @@
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  23 Jul 2008; Sven Schwyn <schwyn@bitcetera.com> ruby-1.9.0.2.ebuild:
+  New ebuild from #203706 thanks to Senuma Takahiko and Mark Somerville.
+
+*ruby-1.9.0.2 (23 Jul 2008)
+
   15 Jul 2008; Hans de Graaff <graaff@gentoo.org> ruby-1.8.6_p230.ebuild:
   Drop cjk support since the most recent oniguruma patches no longer apply to
   this version, #230111.
