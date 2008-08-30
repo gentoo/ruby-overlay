@@ -3,6 +3,9 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
   30 Aug 2008; Hans de Graaff <graaff@gentoo.org> ChangeLog:
+  Add ebuild for ruby 1.9.0.4 based on work in bug 203706
+
+  30 Aug 2008; Hans de Graaff <graaff@gentoo.org> ChangeLog:
   Drop 1.8.* versions that are (or were) in the official tree already.
 
   23 Jul 2008; Sven Schwyn <schwyn@bitcetera.com> ruby-1.9.0.2.ebuild:
