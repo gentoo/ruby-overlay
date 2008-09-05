@@ -2,6 +2,10 @@
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  05 Sep 2008; Alex Legler <gentoo@a3li.info>
+  +files/ruby-1.9.0.4-entity_expansion_limit.diff, ruby-1.9.0.4.ebuild:
+  Added fix for rexml vulnerability (bug #236060; CVE-2008-3790)
+
   30 Aug 2008; Hans de Graaff <graaff@gentoo.org> ChangeLog:
   Add ebuild for ruby 1.9.0.4 based on work in bug 203706
 

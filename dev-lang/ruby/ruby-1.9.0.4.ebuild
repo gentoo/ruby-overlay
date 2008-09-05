@@ -45,6 +45,8 @@ src_unpack() {
 
 	cd ${S}
 
+	epatch "${FILESDIR}/${P}-entity_expansion_limit.diff"
+
 	# Fix a hardcoded lib path in configure script
 	sed -i -e "s:\(RUBY_LIB_PREFIX=\"\${prefix}/\)lib:\1$(get_libdir):" \
 		configure.in || die "sed failed"
