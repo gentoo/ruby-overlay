@@ -1,14 +1,5 @@
---- setup.vanilla.rb	2008-08-07 23:05:41.000000000 +0200
-+++ setup.rb	2008-08-07 23:07:19.000000000 +0200
-@@ -97,7 +97,7 @@
- 
- require 'fileutils'
- require 'rbconfig'
--require 'tmpdir'
-+#require 'tmpdir'
- 
- include FileUtils::Verbose
- 
+--- setup.rb.~1~	2008-06-22 01:51:11.000000000 +0200
++++ setup.rb	2008-06-28 09:05:54.923666929 +0200
 @@ -128,8 +128,8 @@
      lib_dir = Gem::ConfigMap[site_or_vendor]
      bin_dir = Gem::ConfigMap[:bindir]
@@ -20,15 +11,6 @@
    end
  end
  
-@@ -168,7 +168,7 @@
-                          end
- 
-     dest_file = File.join bin_dir, bin_file_formatted
--    bin_tmp_file = File.join Dir.tmpdir, bin_file
-+    bin_tmp_file = File.join ENV['T'], bin_file
- 
-     begin
-       cp bin_file, bin_tmp_file
 @@ -240,19 +240,6 @@
    end
  end
