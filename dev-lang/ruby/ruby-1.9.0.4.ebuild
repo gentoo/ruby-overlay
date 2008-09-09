@@ -28,7 +28,7 @@ RDEPEND="
 	ssl? ( dev-libs/openssl )
 	socks5? ( >=net-proxy/dante-1.1.13 )
 	tk? ( dev-lang/tk )
-	>=dev-ruby/ruby-config-0.3.1
+	>=app-admin/eselect-ruby-20080909
 	!=dev-lang/ruby-cvs-${SLOT}*
 	!dev-ruby/rdoc
 	!dev-ruby/rexml"
@@ -146,15 +146,18 @@ src_install() {
 
 pkg_postinst() {
 	if [[ ! -n $(readlink "${ROOT}"usr/bin/ruby) ]] ; then
-		"${ROOT}usr/sbin/ruby-config" ruby${MY_SUFFIX}
+		eselect ruby set ruby${MY_SUFFIX}
 	fi
+	
 	elog
-	elog "You can change the default ruby interpreter by ${ROOT}usr/sbin/ruby-config"
+	elog "This ebuild is compatible to eselect-ruby"
+	elog "To switch between available Ruby profiles, execute as root:"
+	elog "\teselect ruby set ruby(18|19|...)"
 	elog
 }
 
 pkg_postrm() {
 	if [[ ! -n $(readlink "${ROOT}"usr/bin/ruby) ]] ; then
-		"${ROOT}usr/sbin/ruby-config" ruby${MY_SUFFIX}
+		eselect ruby set ruby${MY_SUFFIX}
 	fi
 }

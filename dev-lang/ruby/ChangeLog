@@ -2,6 +2,10 @@
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  09 Sep 2008; Alex Legler <gentoo@a3li.info> ruby-1.9.0.4.ebuild:
+  Ruby 1.9.0.4 ebuild now uses and mentions and depends on eselect-ruby
+  instead of ruby-config
+
   05 Sep 2008; Alex Legler <gentoo@a3li.info>
   +files/ruby-1.9.0.4-entity_expansion_limit.diff, ruby-1.9.0.4.ebuild:
   Added fix for rexml vulnerability (bug #236060; CVE-2008-3790)
