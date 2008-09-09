@@ -21,9 +21,10 @@
 ##   End example
 ##
 
-# Alex Legler <gentoo@a3li.info> (05 Sep 2008)
-# Highly experimental ebuild for future usage with eselect-ruby
+# Alex Legler <gentoo@a3li.info> (09 Sep 2008)
+# Highly experimental ebuilds for future usage with eselect-ruby
 >=dev-ruby/rake-0.8.1-r1
+>=dev-ruby/rubygems-1.2.0-r1
 
 # Sven Schwyn <gentoo@bitcetera.com> (23 Jul 2008)
 # Masked for test

@@ -1,0 +1,71 @@
+--- setup.vanilla.rb	2008-08-07 23:05:41.000000000 +0200
++++ setup.rb	2008-08-07 23:07:19.000000000 +0200
+@@ -97,7 +97,7 @@
+ 
+ require 'fileutils'
+ require 'rbconfig'
+-require 'tmpdir'
++#require 'tmpdir'
+ 
+ include FileUtils::Verbose
+ 
+@@ -128,8 +128,8 @@
+     lib_dir = Gem::ConfigMap[site_or_vendor]
+     bin_dir = Gem::ConfigMap[:bindir]
+   else
+-    lib_dir = File.join prefix, 'lib'
+-    bin_dir = File.join prefix, 'bin'
++    lib_dir = File.join prefix, Gem::ConfigMap[site_or_vendor]
++    bin_dir = File.join prefix, Gem::ConfigMap[:bindir]
+   end
+ end
+ 
+@@ -168,7 +168,7 @@
+                          end
+ 
+     dest_file = File.join bin_dir, bin_file_formatted
+-    bin_tmp_file = File.join Dir.tmpdir, bin_file
++    bin_tmp_file = File.join ENV['T'], bin_file
+ 
+     begin
+       cp bin_file, bin_tmp_file
+@@ -240,19 +240,6 @@
+   end
+ end
+ 
+-# Remove source caches
+-if install_destdir.empty?
+-  require 'rubygems/source_info_cache'
+-
+-  user_cache_file = File.join(install_destdir,
+-                              Gem::SourceInfoCache.user_cache_file)
+-  system_cache_file = File.join(install_destdir,
+-                                Gem::SourceInfoCache.system_cache_file)
+-
+-  rm_f user_cache_file if File.writable? File.dirname(user_cache_file)
+-  rm_f system_cache_file if File.writable? File.dirname(system_cache_file)
+-end
+-
+ # install RDoc
+ 
+ gem_doc_dir = File.join Gem.dir, 'doc'
+@@ -262,10 +249,6 @@
+ if File.writable? gem_doc_dir and
+    (not File.exist? rubygems_doc_dir or
+     File.writable? rubygems_doc_dir) then
+-  puts "Removing old RubyGems RDoc and ri"
+-  Dir[File.join(Gem.dir, 'doc', 'rubygems-[0-9]*')].each do |dir|
+-    rm_rf dir
+-  end
+ 
+   def run_rdoc(*args)
+     begin
+@@ -277,7 +260,7 @@
+ 
+     args << '--quiet'
+     args << '--main' << 'README'
+-    args << '.' << 'README' << 'LICENSE.txt' << 'GPL.txt'
++    args << '.' << 'README'
+ 
+     r = RDoc::RDoc.new
+     r.document args
