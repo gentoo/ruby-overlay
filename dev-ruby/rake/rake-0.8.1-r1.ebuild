@@ -23,9 +23,13 @@ src_install() {
 }
 
 pkg_postinst() {
+	if [[ ! -n $(readlink "${ROOT}"usr/bin/rake) ]] ; then
+		eselect ruby set ruby18
+	fi
+
 	ewarn
-	ewarn "This version of rake works with Ruby 1.8 only."
-	ewarn "Please manually create a symlink in /usr/bin until there is a"
-	ewarn "suitable version of eselect-ruby available, ruby-config won't work."
+	ewarn "This ebuild is compatible to eselect-ruby"
+	ewarn "To switch between available Ruby profiles, execute as root:"
+	ewarn "\teselect ruby set ruby(18|19|...)"
 	ewarn
 }
