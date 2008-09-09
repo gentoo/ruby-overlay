@@ -76,14 +76,20 @@ pkg_postinst()
 		rm "${SOURCE_CACHE}"
 	fi
 
-	ewarn "If you have previously switched to using ruby18_with_gems using ruby-config, this"
-	ewarn "package has removed that file and makes it unnecessary anymore."
-	ewarn "Please use ruby-config to revert back to ruby18."
+	if [[ ! -n $(readlink "${ROOT}"usr/bin/gem) ]] ; then
+		eselect ruby set ruby18
+	fi
+
+	ewarn
+	ewarn "This ebuild is compatible to eselect-ruby"
+	ewarn "To switch between available Ruby profiles, execute as root:"
+	ewarn "\teselect ruby set ruby(18|19|...)"
+	ewarn
 }
 
 pkg_postrm()
 {
-	ewarn "If you have uninstalled dev-ruby/rubygems. Ruby applications are unlikely"
+	ewarn "If you have uninstalled dev-ruby/rubygems, Ruby applications are unlikely"
 	ewarn "to run in current shells because of missing auto_gem."
 	ewarn "Please run \"unset RUBYOPT\" in your shells before using ruby"
 	ewarn "or start new shells"

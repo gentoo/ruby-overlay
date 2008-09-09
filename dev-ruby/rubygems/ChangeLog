@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubygems/ChangeLog,v 1.101 2008/08/06 16:40:12 graaff Exp $
 
+  09 Sep 2008; Alex Legler <gentoo@a3li.info> rubygems-1.2.0-r1.ebuild:
+  Further improvements for eselect-ruby
+
   09 Sep 2008; Alex Legler <gentoo@a3li.info>
   +files/rubygems-1.2.0-setup.patch, +files/10rubygems, +files/auto_gem.rb,
   +files/conf.d-gem_server, +files/init.d-gem_server2,
