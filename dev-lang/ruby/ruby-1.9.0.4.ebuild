@@ -16,7 +16,7 @@ MY_SUFFIX=$(delete_version_separator 1 ${SLOT})
 
 DESCRIPTION="An object-oriented scripting language"
 HOMEPAGE="http://www.ruby-lang.org/"
-SRC_URI="ftp://ftp.ruby-lang.org/pub/ruby/${SLOT}/${MY_P}.tar.bz2"
+SRC_URI="mirror://ruby/${MY_P}.tar.bz2"
 
 LICENSE="Ruby"
 KEYWORDS="alpha ~amd64 ~arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc ~sparc-fbsd x86 ~x86-fbsd"
