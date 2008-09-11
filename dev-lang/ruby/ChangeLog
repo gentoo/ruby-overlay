@@ -2,6 +2,9 @@
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  11 Sep 2008; Alex Legler <gentoo@a3li.info> -ruby-1.9.0.2.ebuild:
+  Purging old version
+
   11 Sep 2008; Alex Legler <gentoo@a3li.info> ruby-1.9.0.4.ebuild:
   Now using the 3rdpartymirrors, see bug #237392
 
