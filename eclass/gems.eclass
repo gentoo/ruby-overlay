@@ -86,7 +86,11 @@ gems_src_install() {
 			[[ -z "${GEM_SRC}" ]] && GEM_SRC="${DISTDIR}/${MY_P}"
 			spec_path="${D}/${GEMSDIR}/specifications/${MY_P}.gemspec"
 		fi
-
+	
+		# Bug #230136 haunts us here again
+		export GEM_HOME="${D}/${GEMSDIR}"
+		export GEM_PATH="${GEM_HOME}/"
+		
 		/usr/bin/${ruby_version} /usr/bin/gem install ${GEM_SRC} --version ${PV} ${myconf} \
 			--local --install-dir "${D}/${GEMSDIR}" || die "gem install failed"
 
