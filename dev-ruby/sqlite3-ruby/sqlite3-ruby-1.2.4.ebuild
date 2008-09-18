@@ -1,28 +1,59 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/sqlite3-ruby/sqlite3-ruby-1.1.0.ebuild,v 1.12 2007/07/11 05:23:08 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/sqlite3-ruby/sqlite3-ruby-1.2.1.ebuild,v 1.10 2008/05/12 09:52:28 corsair Exp $
 
-inherit ruby gems
+inherit ruby
 
 DESCRIPTION="An extension library to access a SQLite database from Ruby"
 HOMEPAGE="http://rubyforge.org/projects/sqlite-ruby/"
 LICENSE="BSD"
 
-# The URL depends implicitly on the version, unfortunately. Even if you
-# change the filename on the end, it still downloads the same file.
-SRC_URI="mirror://rubyforge/gems/${P}.gem"
+SRC_URI="mirror://rubyforge/sqlite-ruby/${P}.tar.bz2"
 
-KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE=""
+IUSE="doc swig"
 
 USE_RUBY="ruby18 ruby19"
-DEPEND="=dev-db/sqlite-3*"
+RDEPEND="=dev-db/sqlite-3*"
+DEPEND="${RDEPEND}
+	swig? ( dev-lang/swig )"
+
+pkg_setup() {
+	if use swig && ! built_with_use dev-lang/swig ruby ; then
+		eerror "You must compile swig with ruby bindings. Please add"
+		eerror "'ruby' to your USE flags and recompile swig"
+		die "swig needs ruby bindings"
+	elif ! use swig ; then
+		elog "${PN} will work a lot better with swig; it is suggested"
+		elog "that you install swig with the 'ruby' USE flag, and then"
+		elog "install ${PN} with the swig USE flag"
+		ebeep
+		epause 5
+	fi
+}
+
+src_compile() {
+	myconf=""
+	if ! use swig ; then
+		myconf="--without-ext"
+	fi
+
+	${RUBY} setup.rb config --prefix=/usr ${myconf} \
+		|| die "setup.rb config failed"
+	${RUBY} setup.rb setup \
+		|| die "setup.rb setup failed"
+}
 
 src_install() {
-	gems_src_install
-	
-	# Fix for upstream bug #21289
-	cd "${D}"
-	find ./ -perm 0662 -exec chmod 664 {} \;
+	${RUBY} setup.rb install --prefix="${D}" \
+		|| die "setup.rb install failed"
+
+	dodoc README.rdoc CHANGELOG.rdoc
+
+	dohtml doc/faq/faq.html
+
+	if use doc ; then
+		dohtml -r -V api
+	fi
 }
