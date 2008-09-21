@@ -46,7 +46,7 @@ src_install() {
 	ver=$(${RUBY} -r rbconfig -e 'print Config::CONFIG["ruby_version"]')
 
 	# rubygems tries to create GEM_HOME if it doesn't exist, upsetting sandbox,
-	# bug #202109 Since 1.2.0 we also need to set GEM_PATH
+	# bug #202109. Since 1.2.0 we also need to set GEM_PATH
 	# for this reason, bug #230163.
 	export GEM_HOME="${D}/usr/$(get_libdir)/ruby/gems/${ver}"
 	export GEM_PATH="${GEM_HOME}/"
