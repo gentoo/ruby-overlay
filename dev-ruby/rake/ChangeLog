@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/rake/ChangeLog,v 1.60 2008/04/17 10:53:49 armin76 Exp $
 
+  21 Sep 2008; Alex Legler <gentoo@a3li.info> +rake-0.8.2-r1.ebuild:
+  Adding a rake ebuild that builds for 1.8 and 1.9
+
   17 Sep 2008; Alex Legler <gentoo@a3li.info> +rake-0.8.2.ebuild:
   Version bump
 
