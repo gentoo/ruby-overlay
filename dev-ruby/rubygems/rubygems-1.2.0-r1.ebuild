@@ -28,6 +28,7 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}/${P}-setup.patch"
+	epatch "${FILESDIR}/${P}-proxy.patch"
 }
 
 src_compile() {
