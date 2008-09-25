@@ -75,6 +75,9 @@ gems_src_install() {
 	local num_ruby_slots=$(echo "${USE_RUBY}" | wc -w)
 
 	for ruby_version in ${USE_RUBY} ; do
+		# Checking that we actually have that version installed
+		[[ -e /usr/bin/${ruby_version} ]] || continue
+
 		einfo "Installing for ${ruby_version}..."
 		gems_location ${ruby_version}
 		dodir ${GEMSDIR}
@@ -89,7 +92,6 @@ gems_src_install() {
 	
 		# Bug #230136 haunts us here again
 		export GEM_HOME="${D}/${GEMSDIR}"
-		export GEM_PATH="${GEM_HOME}/"
 		
 		/usr/bin/${ruby_version} /usr/bin/gem install ${GEM_SRC} --version ${PV} ${myconf} \
 			--local --install-dir "${D}/${GEMSDIR}" || die "gem install failed"
