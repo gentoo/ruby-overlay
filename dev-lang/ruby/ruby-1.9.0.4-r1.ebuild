@@ -118,6 +118,9 @@ src_test() {
 }
 
 src_install() {
+	# Ruby is involved in the install proces, we don't want interference here.
+	unset RUBYOPT
+	
 	LD_LIBRARY_PATH="${D}/usr/$(get_libdir)"
 	RUBYLIB="${S}:${D}/usr/$(get_libdir)/ruby/${SLOT}"
 	for d in $(find "${S}/ext" -type d) ; do
@@ -130,6 +133,10 @@ src_install() {
 	MINIRUBY=$(echo -e 'include Makefile\ngetminiruby:\n\t@echo $(MINIRUBY)'|make -f - getminiruby)
 	keepdir $(${MINIRUBY} -rrbconfig -e "print Config::CONFIG['sitelibdir']")
 	keepdir $(${MINIRUBY} -rrbconfig -e "print Config::CONFIG['sitearchdir']")
+
+	# Creating the rubygems directories, bug #230163 once more.
+	local ver=$(${MINIRUBY} -rrbconfig -e "print Config::CONFIG['ruby_version']")
+	keepdir /usr/$(get_libdir)/ruby/gems/$ver/{doc,gems,cache,specifications}
 
 	if use doc; then
 		make DESTDIR="${D}" install-doc || die "make install-doc failed"
