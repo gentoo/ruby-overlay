@@ -13,7 +13,7 @@
 # gems_location()	  - Set ${GEMSDIR} with gem install dir and ${GEM_SRC} with
 # 						path to gem to install. Optionally takes a ruby version string, like 
 #						"ruby18" as a parameter.
-# gems_src_unpack()	  - Does nothing.
+# gems_src_unpack()	  - Patches the gem, if needed [beta code!, --a3li Sep 26, 2008]
 # gems_src_compile()  - Does nothing.
 # gems_src_install()  - installs a gem into ${D} using each ruby version that is both 
 # 						installed and specified in USE_RUBY.
@@ -29,7 +29,7 @@ SRC_URI="http://gems.rubyforge.org/gems/${P}.gem"
 IUSE="doc"
 
 DEPEND="
-	>=dev-ruby/rubygems-0.9.4
+	|| ( >=dev-ruby/rubygems-0.9.4 =dev-lang/ruby-1.9* )
 	!dev-ruby/rdoc
 "
 RDEPEND="${DEPEND}"
@@ -47,7 +47,50 @@ gems_location() {
 }
 
 gems_src_unpack() {
-	true
+	[[ -z "${GEM_PATCHES}" ]] && return
+
+	# Prepare environment
+	if [[ -z "${MY_P}" ]]; then
+		[[ -z "${GEM_SRC}" ]] && GEM_SRC="${DISTDIR}/${P}"
+	else
+		[[ -z "${GEM_SRC}" ]] && GEM_SRC="${DISTDIR}/${MY_P}"
+	fi
+
+	local GEMNAME=${GEM_SRC##${DISTDIR}/}
+
+	# Unpack the gem
+	mkdir "${T}/gempatch" "${T}/gembuild" || die "Failed to create dirs"
+	cd "${T}/gempatch" || die
+
+	/usr/bin/gem unpack "${GEM_SRC}.gem" >/dev/null 2>&1
+
+	cd "${GEMNAME}" || die 
+
+	# Patch
+	for p in ${GEM_PATCHES} ; do
+		epatch ${p}
+	done
+
+	# Repacking data (yes, ruby's tar format is a little weird...)
+	find -type f -print0 | sed -e 's#\./##g' | xargs -0 \
+	tar --format posix -czf ../../gembuild/data-new.tar.gz
+
+	[[ $? -eq 0 ]] || die "Repacking failed"
+
+	# Repack gem
+	cd "${T}/gembuild" || die
+
+	tar -xf "${GEM_SRC}.gem" >/dev/null 2>&1 || die "Couldn't unpack raw gem"
+	mv data-new.tar.gz data.tar.gz
+	
+	rm "${GEM_SRC}.gem" || die "Couldn't remove distfile symlink"
+	tar -cf "${T}/${GEMNAME}.gem" data.tar.gz metadata* \
+		|| die "Couldn't repack gem"
+
+	# Set patched gem path
+	export GEM_SRC="${T}/${GEMNAME}.gem"
+
+	einfo "Done with patching the gem."
 }
 
 gems_src_compile() {
@@ -75,8 +118,8 @@ gems_src_install() {
 	local num_ruby_slots=$(echo "${USE_RUBY}" | wc -w)
 
 	for ruby_version in ${USE_RUBY} ; do
-		# Checking that we actually have that version installed
-		[[ -e /usr/bin/${ruby_version} ]] || continue
+		# Check that we have the version installed
+		[[ -e "/usr/bin/${ruby_version}" ]] || continue
 
 		einfo "Installing for ${ruby_version}..."
 		gems_location ${ruby_version}
@@ -89,10 +132,7 @@ gems_src_install() {
 			[[ -z "${GEM_SRC}" ]] && GEM_SRC="${DISTDIR}/${MY_P}"
 			spec_path="${D}/${GEMSDIR}/specifications/${MY_P}.gemspec"
 		fi
-	
-		# Bug #230136 haunts us here again
-		export GEM_HOME="${D}/${GEMSDIR}"
-		
+
 		/usr/bin/${ruby_version} /usr/bin/gem install ${GEM_SRC} --version ${PV} ${myconf} \
 			--local --install-dir "${D}/${GEMSDIR}" || die "gem install failed"
 
