@@ -24,7 +24,7 @@
 
 inherit eutils ruby
 
-SRC_URI="http://gems.rubyforge.org/gems/${P}.gem"
+SRC_URI="mirror://rubyforge/gems/${P}.gem"
 
 IUSE="doc"
 
