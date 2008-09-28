@@ -29,6 +29,9 @@ src_unpack() {
 
 	epatch "${FILESDIR}/${P}-setup.patch"
 	epatch "${FILESDIR}/${P}-proxy.patch"
+	# Fixes a new "feature" that would prevent us from recognizing installed
+	# gems inside the sandbox
+	epatch "${FILESDIR}/${P}-gentoo.patch"
 }
 
 src_compile() {
