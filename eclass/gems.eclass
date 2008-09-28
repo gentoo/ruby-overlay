@@ -133,8 +133,18 @@ gems_src_install() {
 			spec_path="${D}/${GEMSDIR}/specifications/${MY_P}.gemspec"
 		fi
 
-		/usr/bin/${ruby_version} /usr/bin/gem install ${GEM_SRC} --version ${PV} ${myconf} \
-			--local --install-dir "${D}/${GEMSDIR}" || die "gem install failed"
+		# >=1.3.0 needs a path fix, regex works only until rubygems 1.9 ;)
+		local version=$(/usr/bin/${ruby_version} /usr/bin/gem -v)
+
+		if [[ "${version}" =~ "^1\.[3-9]" ]] ; then
+			/usr/bin/${ruby_version} /usr/bin/gem install ${GEM_SRC} \
+			--version ${PV} ${myconf} --local --install-dir "${D}/${GEMSDIR}" \
+			--sandbox-fix --no-user-install || die "gem (>=1.3.0) install failed"
+		else
+			/usr/bin/${ruby_version} /usr/bin/gem install ${GEM_SRC} \
+			--version ${PV} ${myconf} --local --install-dir "${D}/${GEMSDIR}" \
+			|| die "gem (<1.3.0) install failed"
+		fi
 
 		if [[ -d "${D}/${GEMSDIR}/bin" ]] ; then
 			exeinto /usr/bin
