@@ -2,6 +2,11 @@
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  04 Oct 2008; Alex Legler <gentoo@a3li.info>
+  +files/ruby-1.9.0.5-rubygems-proxy.patch, metadata.xml,
+  +ruby-1.9.0.5.ebuild:
+  Version bump, fixed path of NEWS, REXML patch was applied by upstream
+
   25 Sep 2008; Alex Legler <gentoo@a3li.info> ruby-1.9.0.4.ebuild,
   ruby-1.9.0.4-r1.ebuild:
   Adding the rubygems data directories to src_install to avoid sandbox
