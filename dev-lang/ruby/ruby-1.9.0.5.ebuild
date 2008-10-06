@@ -47,6 +47,8 @@ src_unpack() {
 
 	# Patch wrt bug #238061
 	epatch "${FILESDIR}/${P}-rubygems-proxy.patch"
+	# Patch for rubygems to find installed gems outside of the sandbox
+	epatch "${FILESDIR}/${P}-rubygems-gentoo.patch"
 
 	# Strip rake
 	rm "bin/rake"
