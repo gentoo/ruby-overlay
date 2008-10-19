@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/activerecord/ChangeLog,v 1.81 2008/09/13 09:06:38 graaff Exp $
 
+  19 Oct 2008; Alex Legler <gentoo@a3li.info> ++, ++,
+  -activerecord-1.15.6.ebuild, -activerecord-2.0.4.ebuild:
+  Tree/overlay distinction revbump
+
   26 Sep 2008; Alex Legler <gentoo@a3li.info>
   +files/activerecord-1.15.6-offset_limit_fix.patch,
   +files/activerecord-2.0.4-offset_limit_fix.patch, +metadata.xml,
