@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubyforge/ChangeLog,v 1.28 2008/07/08 01:42:16 the_paya Exp $
 
+  19 Oct 2008; Alex Legler <gentoo@a3li.info> ++, -rubyforge-1.0.0.ebuild:
+  Tree/overlay distinction revbump
+
   26 Sep 2008; Alex Legler <gentoo@a3li.info> +metadata.xml,
   +rubyforge-1.0.0.ebuild:
   Adding ruby19 to USE_RUBY
