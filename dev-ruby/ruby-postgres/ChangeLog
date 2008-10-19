@@ -2,6 +2,10 @@
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-postgres/ChangeLog,v 1.21 2008/06/26 06:38:02 robbat2 Exp $
 
+  19 Oct 2008; Alex Legler <gentoo@a3li.info> ++,
+  -ruby-postgres-0.7.9.20080128.ebuild:
+  Tree/overlay distinction revbump
+
   01 Oct 2008; Alex Legler <gentoo@a3li.info>
   +files/ruby-postgres-0.7.9.20080128-19compat.patch, +metadata.xml,
   +ruby-postgres-0.7.9.20080128.ebuild:
