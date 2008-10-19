@@ -2,6 +2,10 @@
 # Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/sqlite-ruby/ChangeLog,v 1.37 2008/05/12 09:55:22 corsair Exp $
 
+  19 Oct 2008; Alex Legler <gentoo@a3li.info> ++,
+  -sqlite-ruby-2.2.3-r1.ebuild:
+  Tree/overlay distinction revbump
+
   01 Oct 2008; Alex Legler <gentoo@a3li.info>
   +files/sqlite-ruby-2.2.3-19compat.patch, +metadata.xml,
   +sqlite-ruby-2.2.3-r1.ebuild:
