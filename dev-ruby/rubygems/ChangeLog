@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubygems/ChangeLog,v 1.101 2008/08/06 16:40:12 graaff Exp $
 
+  19 Oct 2008; Alex Legler <gentoo@a3li.info> ++, -rubygems-1.3.0.ebuild:
+  Tree/overlay distinction revbump
+
   28 Sep 2008; Alex Legler <gentoo@a3li.info>
   +files/rubygems-1.3.0-gentoo.patch, rubygems-1.3.0.ebuild:
   Added fix for the new homedir-installing "feature" in rubygems 1.3
