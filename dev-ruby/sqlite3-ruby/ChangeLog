@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/sqlite3-ruby/ChangeLog,v 1.22 2008/08/06 16:44:13 graaff Exp $
 
+  19 Oct 2008; Alex Legler <gentoo@a3li.info>
+  +sqlite3-ruby-1.2.4-r30.ebuild:
+  Removing swig USE flag as it's required for Ruby 1.9, Bump to rev 30 for
+  overlay/tree distinction.
+
   18 Sep 2008; Alex Legler <gentoo@a3li.info> sqlite3-ruby-1.2.4.ebuild:
   Replaced old gem style ebuild with the right one, fixed documentation file
   names and changed to thirdpartymirrors.

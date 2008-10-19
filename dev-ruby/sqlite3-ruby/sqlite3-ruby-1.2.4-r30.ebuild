@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/sqlite3-ruby/sqlite3-ruby-1.2.1.ebuild,v 1.10 2008/05/12 09:52:28 corsair Exp $
 
+EAPI=2
 inherit ruby
 
 DESCRIPTION="An extension library to access a SQLite database from Ruby"
@@ -12,34 +13,15 @@ SRC_URI="mirror://rubyforge/sqlite-ruby/${P}.tar.bz2"
 
 KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 SLOT="0"
-IUSE="doc swig"
+IUSE="doc"
 
 USE_RUBY="ruby18 ruby19"
 RDEPEND="=dev-db/sqlite-3*"
 DEPEND="${RDEPEND}
-	swig? ( dev-lang/swig )"
-
-pkg_setup() {
-	if use swig && ! built_with_use dev-lang/swig ruby ; then
-		eerror "You must compile swig with ruby bindings. Please add"
-		eerror "'ruby' to your USE flags and recompile swig"
-		die "swig needs ruby bindings"
-	elif ! use swig ; then
-		elog "${PN} will work a lot better with swig; it is suggested"
-		elog "that you install swig with the 'ruby' USE flag, and then"
-		elog "install ${PN} with the swig USE flag"
-		ebeep
-		epause 5
-	fi
-}
+	dev-lang/swig[ruby]"
 
 src_compile() {
-	myconf=""
-	if ! use swig ; then
-		myconf="--without-ext"
-	fi
-
-	${RUBY} setup.rb config --prefix=/usr ${myconf} \
+	${RUBY} setup.rb config --prefix=/usr \
 		|| die "setup.rb config failed"
 	${RUBY} setup.rb setup \
 		|| die "setup.rb setup failed"
