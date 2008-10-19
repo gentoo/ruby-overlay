@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-odbc/ChangeLog,v 1.11 2008/04/13 22:47:54 rbrown Exp $
 
+  19 Oct 2008; Alex Legler <gentoo@a3li.info> ++, -ruby-odbc-0.9995.ebuild:
+  Tree/overlay distinction revbump
+
   01 Oct 2008; Alex Legler <gentoo@a3li.info> +metadata.xml,
   +ruby-odbc-0.9995.ebuild:
   Fixing build failure when Ruby 1.9 is set as default interpreter and
