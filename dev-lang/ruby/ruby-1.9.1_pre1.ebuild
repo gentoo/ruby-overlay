@@ -7,9 +7,9 @@ WANT_AUTOMAKE="latest"
 
 inherit autotools eutils flag-o-matic multilib versionator
 
-# ruby-1.9.1_rcX -> ruby-1.9.0-previewX
+# ruby-1.9.1_preX -> ruby-1.9.0-previewX
 MY_PV=$(replace_version_separator 3 '-')
-MY_P="${PN}-${MY_PV/rc/preview}"
+MY_P="${PN}-${MY_PV/pre/preview}"
 
 # 1.9.1.0 -> 1.9
 SLOT=$(get_version_component_range 1-2)
