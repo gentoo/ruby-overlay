@@ -35,15 +35,13 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 gems_location() {
-	local sitelibdir
 	local ruby_version
 	if [[ -z "$1" ]]; then
-		ruby_version="ruby"
+		ruby_version="gem"
 	else
-		ruby_version=$1
+		ruby_version=${1/ruby/gem}
 	fi
-	sitelibdir=$(/usr/bin/${ruby_version} -r rbconfig -e 'print Config::CONFIG["sitelibdir"]')
-	export GEMSDIR=${sitelibdir/site_ruby/gems}
+	export GEMSDIR=$(/usr/bin/${ruby_version} env gemdir)
 }
 
 gems_src_unpack() {
