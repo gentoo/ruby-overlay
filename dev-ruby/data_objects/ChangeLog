@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/data_objects
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Nov 2008; Alex Legler <gentoo@a3li.info> +metadata.xml,
+  +data_objects-0.9.9.ebuild:
+  Initial commit, thanks to Cyril Mougel <cyril.mougel@gmail.com>.
+
