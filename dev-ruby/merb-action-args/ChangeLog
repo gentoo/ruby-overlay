@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/merb-action-args
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  30 Nov 2008; Alex Legler <gentoo@a3li.info>
+  +merb-action-args-1.0.3.ebuild:
+  Initial commit, thanks to Cyril Mougel <cyril.mougel@gmail.com>.
+
