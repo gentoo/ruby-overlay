@@ -2,6 +2,11 @@
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  01 Dec 2008; Alex Legler <gentoo@a3li.info>
+  +files/ruby-1.9.1_pre2-rubygems-gentoo.patch,
+  +files/ruby-1.9.1_pre2-rubygems-proxy.patch, +ruby-1.9.1_pre2.ebuild:
+  Version bump
+
   02 Nov 2008; Alex Legler <gentoo@a3li.info> ruby-1.9.1_pre1.ebuild:
   Directory structure changed, fixing rubygems inital sandbox breakage
 
