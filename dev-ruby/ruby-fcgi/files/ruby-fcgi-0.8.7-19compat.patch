@@ -1,6 +1,23 @@
 --- ext/fcgi/fcgi.c	2006-06-25 06:06:42.000000000 +0200
-+++ ext/fcgi/fcgi.c.r47	2008-09-13 13:48:51.000000000 +0200
-@@ -222,7 +222,7 @@
++++ ext/fcgi/fcgi.c.r47	2008-12-02 10:37:47.000000000 +0100
+@@ -17,6 +17,16 @@
+ #include "fcgiapp.h"
+ #endif
+ 
++#ifndef RARRAY_PTR
++#define RARRAY_LEN(ary) (RARRAY(ary)->len)
++#define RARRAY_PTR(ary) (RARRAY(ary)->ptr)
++#endif
++
++#ifndef RSTRING_PTR
++#define RSTRING_LEN(str) (RSTRING(str)->len)
++#define RSTRING_PTR(str) (RSTRING(str)->ptr)
++#endif
++
+ static VALUE cFCGI;
+ static VALUE eFCGIError;
+ static VALUE cFCGIStream;
+@@ -222,7 +232,7 @@
    rb_secure(4);
    Data_Get_Struct(self, FCGX_Stream, stream);
    str = rb_obj_as_string(str);
@@ -9,7 +26,18 @@
    if (len == EOF) CHECK_STREAM_ERROR(stream);
    return INT2NUM(len);
  }
-@@ -305,7 +305,7 @@
+@@ -271,8 +281,8 @@
+   VALUE tmp;
+   int i;
+ 
+-  for (i=0; i<RARRAY(ary)->len; i++) {
+-    tmp = RARRAY(ary)->ptr[i];
++  for (i=0; i<RARRAY_LEN(ary); i++) {
++    tmp = RARRAY_PTR(ary)[i];
+     if (rb_inspecting_p(tmp)) {
+       tmp = rb_str_new2("[...]");
+     }
+@@ -305,7 +315,7 @@
      }
      line = rb_obj_as_string(line);
      fcgi_stream_write(out, line);
@@ -18,7 +46,7 @@
        fcgi_stream_write(out, rb_default_rs);
      }
    }
-@@ -379,7 +379,7 @@
+@@ -379,7 +389,7 @@
      rb_str_cat(str, buff, strlen(buff));
      if (strchr(buff, '\n')) break;
    }
@@ -27,7 +55,7 @@
      return str;
    else
      return Qnil;
-@@ -507,7 +507,8 @@
+@@ -507,7 +517,8 @@
  
  
  
@@ -37,7 +65,7 @@
    
    FCGX_Init();
    
-@@ -517,7 +518,7 @@
+@@ -517,7 +528,7 @@
    rb_define_singleton_method(cFCGI, "each", fcgi_s_each, 0);
    rb_define_singleton_method(cFCGI, "each_request", fcgi_s_each, 0);
    rb_define_singleton_method(cFCGI, "is_cgi?", fcgi_s_iscgi, 0);

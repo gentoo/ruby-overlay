@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-fcgi/ChangeLog,v 1.21 2008/05/12 10:02:44 corsair Exp $
 
+  02 Dec 2008; Alex Legler <gentoo@a3li.info>
+  files/ruby-fcgi-0.8.7-19compat.patch:
+  Fixing patch for latest Ruby 1.9 releases
+
   14 Sep 2008; Alex Legler <gentoo@a3li.info>
   +files/ruby-fcgi-0.8.7-19compat.patch, +metadata.xml,
   +ruby-fcgi-0.8.7-r1.ebuild:
