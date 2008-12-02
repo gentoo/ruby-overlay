@@ -3,18 +3,17 @@
 # $Header: $
 
 inherit ruby
+USE_RUBY="ruby18 ruby19"
 
 DESCRIPTION="An easy to deploy CGI to FCGI wrapper"
 HOMEPAGE="http://rubyforge.org/projects/fcgi/"
 SRC_URI="mirror://rubyforge/fcgi/${P}.tgz"
 
-KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-LICENSE="Ruby"
-
-DEPEND="dev-libs/fcgi"
-RDEPEND="dev-ruby/ruby-fcgi"
-
+KEYWORDS="~amd64 ~x86"
+LICENSE="|| ( Ruby GPL-2 )"
 IUSE=""
+
+RDEPEND="dev-ruby/ruby-fcgi"
 
 src_install() {
 	local siteruby=$(${RUBY} -r rbconfig -e \
