@@ -1,0 +1,8 @@
+# ChangeLog for dev-lang/ruby-enterprise
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  10 Dec 2008; Alex Legler <gentoo@a3li.info> +files/libdir.patch,
+  +files/mkconfig.patch, +ruby-enterprise-1.8.6.20081205.ebuild:
+  Initial ebuild, done by myself.
+
