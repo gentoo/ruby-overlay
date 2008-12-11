@@ -18,7 +18,9 @@ SLOT="18"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-libs/openssl"
+DEPEND="
+	dev-libs/openssl
+	>=app-admin/eselect-ruby-20081211"
 RDEPEND=""
 PDEPEND="dev-ruby/rubygems-ee"
 
@@ -34,7 +36,7 @@ src_unpack() {
 
 src_configure() {
 	cd "${S}"
-	econf  --program-suffix="ee"
+	econf --program-suffix="ee"
 }
 
 src_install() {
