@@ -17,6 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="video"
 
+USE_RUBY="ruby18"
+
 RDEPEND="x11-libs/gtk+:2
 	>=media-libs/giflib-4.1.6-r1
 	>=x11-libs/cairo-1.6.4-r1[svg]

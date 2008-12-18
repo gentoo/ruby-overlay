@@ -4,6 +4,14 @@
 
   18 Dec 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
   ChangeLog:
+  Removed USE_RUBY variable.
+
+  18 Dec 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
+  ChangeLog:
+  Original ebuild submitted by Greg Fitzgerald. Bug #234985.
+
+  18 Dec 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
+  ChangeLog:
   Initial ebuild for Shoes and Shoes 2. They don't work with ruby19 and Shoes
   2 has two QA issues.
 
