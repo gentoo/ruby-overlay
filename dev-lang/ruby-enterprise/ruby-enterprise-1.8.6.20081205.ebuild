@@ -15,7 +15,7 @@ SRC_URI="mirror://rubyforge/emm-ruby/${PN}-${MY_PV}.tar.gz"
 
 LICENSE="|| ( Ruby GPL-2 )"
 SLOT="18"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
