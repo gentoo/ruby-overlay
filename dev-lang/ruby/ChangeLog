@@ -2,6 +2,10 @@
 # Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  25 Dec 2008; Alex Legler <gentoo@a3li.info> ruby-1.9.1_pre2-r1.ebuild:
+  Fixed sandbox violation when installing with USE="doc". Thanks to
+  schroedinbug from #g-ruby for reporting.
+
   17 Dec 2008; Mark Somerville <gentoo-ruby@scottishclimbs.com> +ruby-1.9.1_pre2-r1.ebuild:
   Removed -j1 from 1.9.1_pre2 since it seems to build without this
   restriction now.
