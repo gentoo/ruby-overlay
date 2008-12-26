@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/builder
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  26 Dec 2008; Alex Legler <gentoo@a3li.info> +metadata.xml,
+  +builder-2.1.2-r30.ebuild:
+  Uses the tarball distribution now
+
