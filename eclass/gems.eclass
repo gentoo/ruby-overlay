@@ -117,7 +117,7 @@ gems_src_install() {
 
 	for ruby_version in ${USE_RUBY} ; do
 		# Check that we have the version installed
-		[[ -e "/usr/bin/${ruby_version}" ]] || continue
+		[[ -e "/usr/bin/${ruby_version/ruby/gem}" ]] || continue
 
 		einfo "Installing for ${ruby_version}..."
 		gems_location ${ruby_version}
