@@ -8,7 +8,7 @@ SRC_URI="http://dev.a3li.info/gentoo/distfiles/ruby.eselect-${PVR}.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=app-admin/eselect-1.0.2"
