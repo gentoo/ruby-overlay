@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-USE_RUBY="ruby18 ruby19"
+USE_RUBY="ruby18"
 DEPEND="virtual/ruby
 	virtual/mysql"
 
@@ -26,7 +26,6 @@ src_unpack() {
 	fi
 
 	epatch "${FILESDIR}/${P}-test.patch"
-	epatch "${FILESDIR}/${P}-19compat.patch"
 }
 
 src_compile() {
