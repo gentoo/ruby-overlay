@@ -1,6 +1,10 @@
 # ChangeLog for dev-ruby/ruby-pango
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-pango/ChangeLog,v 1.41 2008/04/22 18:30:13 graaff Exp $
+
+  09 Jan 2009; Mark Somerville <gentoo-ruby@scottishclimbs.com>
+  +ruby-pango-0.18.1-r1.ebuild:
+  Removed rubyee and dropped keywords to testing.
 
   18 Dec 2008; gentoo-ruby@scottishclimbs.com +metadata.xml,
   +ruby-pango-0.18.1.ebuild:
