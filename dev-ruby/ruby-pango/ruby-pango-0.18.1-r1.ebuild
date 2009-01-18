@@ -12,3 +12,10 @@ DEPEND=">=x11-libs/pango-1.2.1
 	>=dev-ruby/rcairo-1.2.0"
 RDEPEND="${DEPEND}
 	>=dev-ruby/ruby-glib2-${PV}"
+
+# Hotfix for ruby19 as default symlink
+src_compile() {
+	ruby() { /usr/bin/ruby18 "$@" ; }
+
+	ruby-gnome2_src_compile
+}
