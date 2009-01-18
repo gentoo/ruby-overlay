@@ -2,6 +2,9 @@
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-glib2/ChangeLog,v 1.57 2008/06/21 20:05:20 corsair Exp $
 
+  18 Jan 2009; Alex Legler <a3li@gentoo.org> -ruby-glib2-0.18.1.ebuild:
+  Removing invalid stable ebuild
+
   09 Jan 2009; Mark Somerville <gentoo-ruby@scottishclimbs.com> +ruby-glib2-0.18.1-r1.ebuild:
   Removed rubyee and dropped keywords to testing.
 
