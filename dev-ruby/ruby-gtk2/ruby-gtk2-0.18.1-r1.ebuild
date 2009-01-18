@@ -14,3 +14,10 @@ RDEPEND="${DEPEND}
 	>=dev-ruby/ruby-glib2-${PV}
 	>=dev-ruby/ruby-pango-${PV}
 	>=dev-ruby/ruby-atk-${PV}"
+
+# Hotfix for ruby19 as default symlink
+src_compile() {
+	ruby() { /usr/bin/ruby18 "$@" ; }
+
+	ruby-gnome2_src_compile
+}

@@ -2,6 +2,10 @@
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-gtk2/ChangeLog,v 1.59 2008/04/12 08:48:56 graaff Exp $
 
+  18 Jan 2009; Alex Legler <a3li@gentoo.org> -ruby-gtk2-0.18.1.ebuild,
+  ruby-gtk2-0.18.1-r1.ebuild:
+  Removing old, forcing ruby18 for configure
+
   09 Jan 2009; Mark Somerville <gentoo-ruby@scottishclimbs.com>
   +ruby-gtk2-0.18.1-r1.ebuild:
   Removed rubyee.
