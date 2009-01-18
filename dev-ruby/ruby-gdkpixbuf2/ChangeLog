@@ -2,6 +2,10 @@
 # Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-gdkpixbuf2/ChangeLog,v 1.43 2008/05/21 12:55:17 drac Exp $
 
+  18 Jan 2009; Alex Legler <a3li@gentoo.org> -ruby-gdkpixbuf2-0.18.1.ebuild,
+  ruby-gdkpixbuf2-0.18.1-r1.ebuild:
+  Removing invalid stable version, forcing ruby18 for configure
+
   09 Jan 2009; Mark Somerville <gentoo-ruby@scottishclimbs.com>
   +ruby-gdkpixbuf2-0.18.1-r1.ebuild:
   Removed rubyee and dropped keywords to testing.

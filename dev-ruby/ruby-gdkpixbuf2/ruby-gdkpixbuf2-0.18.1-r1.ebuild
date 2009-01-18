@@ -11,3 +11,10 @@ RDEPEND=">=dev-ruby/ruby-glib2-${PV}
 	>=x11-libs/gtk+-2"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
+
+# Hotfix for ruby19 as default symlink
+src_compile() {
+	ruby() { /usr/bin/ruby18 "$@" ; }
+
+	ruby-gnome2_src_compile
+}
