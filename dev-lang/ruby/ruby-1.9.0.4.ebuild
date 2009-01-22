@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ruby-1.8.6_p111-r1.ebuild,v 1.8 2008/02/17 12:19:21 armin76 Exp $
 
@@ -46,7 +46,7 @@ src_unpack() {
 	cd ${S}
 
 	epatch "${FILESDIR}/${P}-entity_expansion_limit.diff"
-	epatch "${FILESDIR}/${P}-rubygems-proxy.patch"
+	epatch "${FILESDIR}/ruby19-rubygems-proxy.patch"
 
 	# Fix a hardcoded lib path in configure script
 	sed -i -e "s:\(RUBY_LIB_PREFIX=\"\${prefix}/\)lib:\1$(get_libdir):" \

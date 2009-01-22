@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $ 
 
@@ -49,9 +49,9 @@ src_unpack() {
 	cd ${S}
 
 	# Patch wrt bug #238061
-	epatch "${FILESDIR}/${P}-rubygems-proxy.patch"
+	epatch "${FILESDIR}/ruby19-rubygems-proxy.patch"
 	# Patch for rubygems to find installed gems outside of the sandbox
-	epatch "${FILESDIR}/${P}-rubygems-gentoo.patch"
+	epatch "${FILESDIR}/ruby19-rubygems-gentoo.patch"
 
 	# Strip rake
 	rm "bin/rake"
