@@ -1,6 +1,10 @@
 # ChangeLog for dev-lang/ruby-enterprise
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  22 Jan 2009; Alex Legler <a3li@gentoo.org> +files/openssl.patch,
+  +ruby-enterprise-1.8.6.20081205-r1.ebuild:
+  Revbump to include openssl patch
 
   21 Dec 2008; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
   ChangeLog:
