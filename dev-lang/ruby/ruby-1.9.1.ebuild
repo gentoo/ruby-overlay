@@ -126,7 +126,7 @@ src_install() {
 	# Creating the rubygems directories, bug #230163 once more.
 	local MINIRUBY=$(echo -e 'include Makefile\ngetminiruby:\n\t@echo $(MINIRUBY)'|make -f - getminiruby)
 	local ver=$(${MINIRUBY} -rrbconfig -e "print Config::CONFIG['ruby_version']")
-	keepdir /usr/$(get_libdir)/ruby${MY_SUFFIX}/gems/${ver}/{doc,gems,cache,specifications}
+	keepdir /usr/$(get_libdir)/ruby/gems/${ver}/{doc,gems,cache,specifications}
 	
 	export GEM_HOME="${D}/usr/$(get_libdir)/ruby/gems/${ver}"
 	export GEM_PATH="${GEM_HOME}/"

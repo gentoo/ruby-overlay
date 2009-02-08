@@ -2,6 +2,9 @@
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  06 Feb 2009; Alex Legler <a3li@gentoo.org> ruby-1.9.1.ebuild:
+  Fix the once more moved gem dir
+
   01 Feb 2009; Alex Legler <a3li@gentoo.org> +ruby-1.9.1.ebuild:
   Version bump
 
