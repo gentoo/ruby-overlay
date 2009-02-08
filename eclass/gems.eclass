@@ -146,13 +146,13 @@ gems_src_install() {
 
 		if [[ -d "${D}/${GEMSDIR}/bin" ]] ; then
 			exeinto /usr/bin
-			for exe in ${D}/${GEMSDIR}/bin/* ; do
+			for exe in "${D}"/${GEMSDIR}/bin/* ; do
 				if [ "$num_ruby_slots" -ge 2 ] ; then
 					# Ensures that the exe file gets run using the currently
 					# selected version of ruby.
 					sed -i -e 's@^#!/usr/bin/ruby.*$@#!/usr/bin/ruby@' "${exe}"
 				fi
-				doexe ${exe}
+				doexe "${exe}"
 			done
 		fi
 	done
