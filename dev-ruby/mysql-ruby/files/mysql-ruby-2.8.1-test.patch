@@ -1,9 +1,9 @@
---- mysql-ruby-2.8/test.rb.0	2008-06-17 07:36:44.000000000 +0200
-+++ mysql-ruby-2.8/test.rb	2008-09-11 20:42:19.000000000 +0200
+--- mysql-ruby-2.8.1/test.rb.0	2008-06-17 07:36:44.000000000 +0200
++++ mysql-ruby-2.8.1/test.rb	2008-09-11 20:42:19.000000000 +0200
 @@ -1,12 +1,17 @@
 -#!/usr/local/bin/ruby
 +#!/usr/bin/env ruby
- # $Id: test.rb 218 2008-06-17 05:36:44Z tommy $
+ # $Id: test.rb 244 2009-02-01 08:43:39Z tommy $
  
  require "test/unit"
 -require "./mysql.o"

@@ -1,6 +1,11 @@
 # ChangeLog for dev-ruby/mysql-ruby
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/mysql-ruby/ChangeLog,v 1.55 2008/04/14 12:30:17 fmccor Exp $
+
+  21 Feb 2009; Alex Legler <a3li@gentoo.org>
+  +files/mysql-ruby-2.8.1-test.patch, -files/mysql-ruby-2.8-test.patch,
+  -mysql-ruby-2.8.ebuild, +mysql-ruby-2.8.1.ebuild:
+  Remove old; version bump
 
   30 Dec 2008; Alex Legler <gentoo@a3li.info>
   -files/mysql-ruby-2.8-19compat.patch, mysql-ruby-2.8.ebuild:
