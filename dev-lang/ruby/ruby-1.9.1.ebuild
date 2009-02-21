@@ -13,6 +13,9 @@ MY_P="${P}-p0"
 # 1.9.1.0 -> 1.9
 SLOT=$(get_version_component_range 1-2)
 
+# 1.9.1.0 -> 1.9.1 (used in libdirs)
+RUBYVERSION=$(get_version_component_range 1-3)
+
 # 1.9 -> 19
 MY_SUFFIX=$(delete_version_separator 1 ${SLOT})
 
@@ -21,7 +24,7 @@ HOMEPAGE="http://www.ruby-lang.org/"
 SRC_URI="mirror://ruby/${MY_P}.tar.bz2"
 
 LICENSE="Ruby"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~x86"
 IUSE="berkdb debug doc emacs examples gdbm ipv6 rubytests socks5 ssl tk xemacs"
 
 RDEPEND="
@@ -35,7 +38,8 @@ RDEPEND="
 	!dev-ruby/rdoc
 	!dev-ruby/rexml"
 DEPEND="${RDEPEND}"
-PDEPEND="emacs? ( app-emacs/ruby-mode )
+PDEPEND="
+	emacs? ( app-emacs/ruby-mode )
 	xemacs? ( app-xemacs/ruby-modes )"
 
 PROVIDE="virtual/ruby"
@@ -95,7 +99,6 @@ src_compile() {
 		$(use_with tk) \
 		${myconf} \
 		--enable-option-checking=no \
-		--with-sitedir=/usr/$(get_libdir)/ruby/site_ruby \
 		|| die "econf failed"
 
 	emake EXTLDFLAGS="${LDFLAGS}" || die "emake failed"
@@ -109,30 +112,29 @@ src_test() {
 	elog
 	if use rubytests; then
 		elog "You have enabled rubytests, so they will be installed to"
-		elog "/usr/share/${PN}-${SLOT}/test. To run them you must be a user other"
+		elog "/usr/share/${PN}-${RUBYVERSION}/test. To run them you must be a user other"
 		elog "than root, and you must place them into a writeable directory."
 		elog "Then call: "
 		elog
-		elog "ruby -C /location/of/tests runner.rb"
+		elog "ruby19 -C /location/of/tests runner.rb"
 	else
 		elog "Enable the rubytests USE flag to install the make check tests"
 	fi
 }
 
 src_install() {
-	# Ruby is involved in the install proces, we don't want interference here.
+	# Ruby is involved in the install process, we don't want interference here.
 	unset RUBYOPT
 
 	# Creating the rubygems directories, bug #230163 once more.
 	local MINIRUBY=$(echo -e 'include Makefile\ngetminiruby:\n\t@echo $(MINIRUBY)'|make -f - getminiruby)
-	local ver=$(${MINIRUBY} -rrbconfig -e "print Config::CONFIG['ruby_version']")
-	keepdir /usr/$(get_libdir)/ruby/gems/${ver}/{doc,gems,cache,specifications}
+	keepdir /usr/$(get_libdir)/ruby${MY_SUFFIX}/gems/${RUBYVERSION}/{doc,gems,cache,specifications}
 	
-	export GEM_HOME="${D}/usr/$(get_libdir)/ruby/gems/${ver}"
+	export GEM_HOME="${D}/usr/$(get_libdir)/ruby${MY_SUFFIX}/gems/${RUBYVERSION}"
 	export GEM_PATH="${GEM_HOME}/"
 
 	LD_LIBRARY_PATH="${D}/usr/$(get_libdir)"
-	RUBYLIB="${S}:${D}/usr/$(get_libdir)/ruby/${SLOT}"
+	RUBYLIB="${S}:${D}/usr/$(get_libdir)/ruby/${RUBYVERSION}"
 	for d in $(find "${S}/ext" -type d) ; do
 		RUBYLIB="${RUBYLIB}:$d"
 	done
@@ -160,9 +162,12 @@ src_install() {
 	dodoc ChangeLog NEWS doc/NEWS-1.8.7 README* ToDo
 
 	if use rubytests; then
-		dodir /usr/share/${PN}-${SLOT}
-		cp -pPR test "${D}/usr/share/${PN}-${SLOT}"
+		dodir /usr/share/${PN}-${RUBYVERSION}
+		cp -pPR test "${D}/usr/share/${PN}-${RUBYVERSION}"
 	fi
+	
+	insinto /usr/$(get_libdir)/ruby${MY_SUFFIX}/site_ruby/
+	newins "${FILESDIR}/auto_gem.rb" auto_gem.rb
 }
 
 pkg_postinst() {
