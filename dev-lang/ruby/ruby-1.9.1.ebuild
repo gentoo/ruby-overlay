@@ -56,6 +56,8 @@ src_unpack() {
 	# Patch for rubygems to find installed gems outside of the sandbox
 	epatch "${FILESDIR}/ruby19-rubygems-gentoo.patch"
 
+	epatch "${FILESDIR}/${PN}-ossl_ocsp-verification.patch"
+
 	# Strip rake
 	rm "bin/rake"
 	rm "lib/rake.rb"

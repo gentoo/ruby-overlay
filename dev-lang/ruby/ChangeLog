@@ -2,6 +2,10 @@
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  23 Feb 2009; Alex Legler <a3li@gentoo.org>
+  +files/ruby-ossl_ocsp-verification.patch, ruby-1.9.1.ebuild:
+  Adding patch for bug 260006 (CVE-2009-0642)
+
   21 Feb 2009; Alex Legler <a3li@gentoo.org> +files/auto_gem.rb,
   ruby-1.9.1.ebuild:
   Removing site_ruby override to support the new gem load path. This
