@@ -21,6 +21,15 @@
 ##   End example
 ##
 
+# Alex Legler <a3li@gentoo.org> (15 Mar 2009)
+# Rails 2.3 beta ebuilds
+=dev-ruby/rails-2.3.1
+=dev-ruby/actionpack-2.3.1
+=dev-ruby/actionmailer-2.3.1
+=dev-ruby/activerecord-2.3.1
+=dev-ruby/activeresource-2.3.1
+=dev-ruby/activesupport-2.3.1
+
 # Sven Schwyn <gentoo@bitcetera.com> (23 Jul 2008)
 # Masked for test
 =dev-lang/ruby-1.9*
