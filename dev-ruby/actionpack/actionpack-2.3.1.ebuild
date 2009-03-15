@@ -15,4 +15,5 @@ KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND=">=dev-lang/ruby-1.8.5
-	=dev-ruby/activesupport-2.3.1"
+	=dev-ruby/activesupport-2.3.1
+	>=dev-ruby/rack-0.9.0"
