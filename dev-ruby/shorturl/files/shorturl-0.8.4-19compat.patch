@@ -1,0 +1,17 @@
+diff --git a/lib/shorturl.rb b/lib/shorturl.rb
+index 62eae00..63fcf56 100644
+--- a/lib/shorturl.rb
++++ b/lib/shorturl.rb
+@@ -37,8 +37,10 @@ class Service
+   def call(url)
+     Net::HTTP.start(@hostname, @port) { |http|
+       response = case @method
+-                 when :post: http.post(@action, "#{@field}=#{url}")
+-                 when :get: http.get("#{@action}?#{@field}=#{CGI.escape(url)}")
++                 when :post then
++                   http.post(@action, "#{@field}=#{url}")
++                 when :get then
++                   http.get("#{@action}?#{@field}=#{CGI.escape(url)}")
+                  end
+       if response.code == @code.to_s
+         @block.call(response.read_body)
