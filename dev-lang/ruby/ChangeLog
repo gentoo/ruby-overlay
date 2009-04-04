@@ -2,6 +2,12 @@
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  04 Apr 2009; Alex Legler <a3li@gentoo.org> ++, -ruby-1.9.0.4.ebuild,
+  -ruby-1.9.0.4-r1.ebuild, -ruby-1.9.0.5.ebuild, -ruby-1.9.1_pre1.ebuild,
+  -ruby-1.9.1_pre2.ebuild, -ruby-1.9.1_pre2-r1.ebuild,
+  -ruby-1.9.1_rc1.ebuild, -ruby-1.9.1_rc2.ebuild, -ruby-1.9.1.ebuild:
+  Purging old, migrating to EAPI-2
+
   23 Feb 2009; Alex Legler <a3li@gentoo.org>
   +files/ruby-ossl_ocsp-verification.patch, ruby-1.9.1.ebuild:
   Adding patch for bug 260006 (CVE-2009-0642)
