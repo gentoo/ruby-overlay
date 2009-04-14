@@ -2,6 +2,10 @@
 # Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
 
+  14 Apr 2009; Alex Legler <a3li@gentoo.org>
+  +files/ruby19-test_handle_special_crossref.patch, ruby-1.9.1-r99.ebuild:
+  Adding patch and extending test capabilities
+
   04 Apr 2009; Alex Legler <a3li@gentoo.org> ++, -ruby-1.9.0.4.ebuild,
   -ruby-1.9.0.4-r1.ebuild, -ruby-1.9.0.5.ebuild, -ruby-1.9.1_pre1.ebuild,
   -ruby-1.9.1_pre2.ebuild, -ruby-1.9.1_pre2-r1.ebuild,

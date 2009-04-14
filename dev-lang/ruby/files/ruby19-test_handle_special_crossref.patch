@@ -1,0 +1,14 @@
+Patch for test_handle_special_CROSSREF_no_underscore by Nobu Nakada
+via redmine issue 883.
+
+Index: lib/rdoc/markup/to_html_crossref.rb
+===================================================================
+--- lib/rdoc/markup/to_html_crossref.rb (revision 22822)
++++ lib/rdoc/markup/to_html_crossref.rb (working copy)
+@@ -66,5 +66,5 @@ class RDoc::Markup::ToHtmlCrossref < RDo
+                       # one special character (period, slash, or
+                       # underscore).
+-                      | [\/\w]+[_\/\.][\w\/\.]+
++                      | (?:\.\.\/)*[-\/\w]+[_\/\.][-\w\/\.]+
+ 
+                       # Things that have markup suppressed

@@ -54,6 +54,8 @@ src_prepare() {
 	epatch "${FILESDIR}/ruby19-rubygems-gentoo.patch"
 
 	epatch "${FILESDIR}/${PN}-ossl_ocsp-verification.patch"
+	epatch "${FILESDIR}/ruby19-test_handle_special_crossref.patch"
+
 
 	# Strip rake
 	rm "bin/rake"
@@ -106,20 +108,15 @@ src_compile() {
 }
 
 src_test() {
-	emake test || die "make test failed"
-
-	elog "Ruby's make test has been run. Ruby also ships with a make check"
-	elog "that cannot be run until after ruby has been installed."
-	elog
 	if use rubytests; then
-		elog "You have enabled rubytests, so they will be installed to"
-		elog "/usr/share/${PN}-${RUBYVERSION}/test. To run them you must be a user other"
-		elog "than root, and you must place them into a writeable directory."
-		elog "Then call: "
-		elog
-		elog "ruby19 -C /location/of/tests runner.rb"
+		ebegin "Running make check"
+		# test_readline is still not fixed, bug 143341
+		TERM="vt100" emake check || die "make check failed"
+		eend $?
 	else
-		elog "Enable the rubytests USE flag to install the make check tests"
+		ebegin "Running make test"
+		emake test || die "make test failed"
+		eend $?
 	fi
 }
 
@@ -162,11 +159,6 @@ src_install() {
 
 	dodoc ChangeLog NEWS doc/NEWS-1.8.7 README* ToDo
 
-	if use rubytests; then
-		dodir /usr/share/${PN}-${RUBYVERSION}
-		cp -pPR test "${D}/usr/share/${PN}-${RUBYVERSION}"
-	fi
-	
 	insinto /usr/$(get_libdir)/ruby${MY_SUFFIX}/site_ruby/
 	newins "${FILESDIR}/auto_gem.rb" auto_gem.rb
 }
