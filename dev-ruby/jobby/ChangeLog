@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/jobby
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  14 Apr 2009; Mark Somerville <gentoo-ruby@scottishclimbs.com>
+  +metadata.xml, +jobby-0.3.4.ebuild:
+  Added Jobby to the repos, keyworded.
+
