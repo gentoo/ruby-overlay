@@ -1,0 +1,7 @@
+# ChangeLog for dev-util/google-perftools
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Apr 2009; Alex Legler <a3li@gentoo.org> +google-perftools-1.1.ebuild:
+  Initial import. Ebuild by swegener via ramereth's overlay
+
