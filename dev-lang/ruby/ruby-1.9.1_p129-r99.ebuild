@@ -1,13 +1,13 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $ 
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ruby-1.9.1_p129.ebuild,v 1.2 2009/05/15 14:58:27 flameeyes Exp $
 
 EAPI=2
 
 inherit autotools eutils flag-o-matic multilib versionator
 
 # Add p0 patchlevel
-MY_P="${P}-p0"
+MY_P="${P/_/-}"
 
 # 1.9.1.0 -> 1.9
 SLOT=$(get_version_component_range 1-2)
@@ -23,7 +23,7 @@ HOMEPAGE="http://www.ruby-lang.org/"
 SRC_URI="mirror://ruby/${MY_P}.tar.bz2"
 
 LICENSE="|| ( Ruby GPL-2 )"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~x86-fbsd"
 IUSE="berkdb debug doc emacs examples gdbm ipv6 rubytests socks5 ssl tk xemacs"
 
 RDEPEND="
@@ -53,9 +53,7 @@ src_prepare() {
 	# Patch for rubygems to find installed gems outside of the sandbox
 	epatch "${FILESDIR}/ruby19-rubygems-gentoo.patch"
 
-	epatch "${FILESDIR}/${PN}-ossl_ocsp-verification.patch"
-	epatch "${FILESDIR}/ruby19-test_handle_special_crossref.patch"
-
+	epatch "${FILESDIR}/${PN}${MY_SUFFIX}-mkmf-parallel-install.patch"
 
 	# Strip rake
 	rm "bin/rake"
@@ -108,15 +106,20 @@ src_compile() {
 }
 
 src_test() {
+	emake test || die "make test failed"
+
+	elog "Ruby's make test has been run. Ruby also ships with a make check"
+	elog "that cannot be run until after ruby has been installed."
+	elog
 	if use rubytests; then
-		ebegin "Running make check"
-		# test_readline is still not fixed, bug 143341
-		TERM="vt100" emake check || die "make check failed"
-		eend $?
+		elog "You have enabled rubytests, so they will be installed to"
+		elog "/usr/share/${PN}-${RUBYVERSION}/test. To run them you must be a user other"
+		elog "than root, and you must place them into a writeable directory."
+		elog "Then call: "
+		elog
+		elog "ruby19 -C /location/of/tests runner.rb"
 	else
-		ebegin "Running make test"
-		emake test || die "make test failed"
-		eend $?
+		elog "Enable the rubytests USE flag to install the make check tests"
 	fi
 }
 
@@ -127,7 +130,7 @@ src_install() {
 	# Creating the rubygems directories, bug #230163 once more.
 	local MINIRUBY=$(echo -e 'include Makefile\ngetminiruby:\n\t@echo $(MINIRUBY)'|make -f - getminiruby)
 	keepdir /usr/$(get_libdir)/ruby${MY_SUFFIX}/gems/${RUBYVERSION}/{doc,gems,cache,specifications}
-	
+
 	export GEM_HOME="${D}/usr/$(get_libdir)/ruby${MY_SUFFIX}/gems/${RUBYVERSION}"
 	export GEM_PATH="${GEM_HOME}/"
 
@@ -159,6 +162,11 @@ src_install() {
 
 	dodoc ChangeLog NEWS doc/NEWS-1.8.7 README* ToDo
 
+	if use rubytests; then
+		dodir /usr/share/${PN}-${RUBYVERSION}
+		cp -pPR test "${D}/usr/share/${PN}-${RUBYVERSION}"
+	fi
+
 	insinto /usr/$(get_libdir)/ruby${MY_SUFFIX}/site_ruby/
 	newins "${FILESDIR}/auto_gem.rb" auto_gem.rb
 }
@@ -167,7 +175,7 @@ pkg_postinst() {
 	if [[ ! -n $(readlink "${ROOT}"usr/bin/ruby) ]] ; then
 		eselect ruby set ruby${MY_SUFFIX}
 	fi
-	
+
 	elog
 	elog "To switch between available Ruby profiles, execute as root:"
 	elog "\teselect ruby set ruby(18|19|...)"
