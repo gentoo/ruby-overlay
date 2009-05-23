@@ -30,7 +30,7 @@ IUSE="doc"
 
 DEPEND="
 	|| ( >=dev-ruby/rubygems-0.9.4 =dev-lang/ruby-1.9* )
-	!dev-ruby/rdoc
+	!<dev-ruby/rdoc-2
 "
 RDEPEND="${DEPEND}"
 
