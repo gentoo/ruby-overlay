@@ -34,7 +34,7 @@ RDEPEND="
 	tk? ( dev-lang/tk[threads] )
 	>=app-admin/eselect-ruby-20080921
 	!=dev-lang/ruby-cvs-${SLOT}*
-	!dev-ruby/rdoc
+	!<dev-ruby/rdoc-2
 	!dev-ruby/rexml"
 DEPEND="${RDEPEND}"
 PDEPEND="
