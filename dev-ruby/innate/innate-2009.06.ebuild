@@ -11,7 +11,7 @@ HOMEPAGE="http://github.com/manveru/innate"
 
 LICENSE="Ruby"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 
 RDEPEND=">=dev-ruby/rack-1.0.0"
