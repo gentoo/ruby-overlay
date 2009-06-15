@@ -11,8 +11,8 @@ HOMEPAGE="http://ramaze.net"
 
 LICENSE="Ruby"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-ruby/innate-2009.05"
+RDEPEND=">=dev-ruby/innate-2009.06"
 DEPEND="${RDEPEND}"
 
