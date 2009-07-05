@@ -1,6 +1,11 @@
 # ChangeLog for dev-ruby/ruby-pg
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*ruby-pg-0.8.0 (05 Jul 2009)
+
+  05 Jul 2009; <pablo@gentoo.org> +ruby-pg-0.8.0.ebuild:
+  Version bump
 
   07 Oct 2008; Alex Legler <gentoo@a3li.info>
   +ruby-pg-0.7.9.20081005.ebuild:
