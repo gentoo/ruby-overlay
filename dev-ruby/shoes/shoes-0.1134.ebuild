@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -24,7 +24,6 @@ RDEPEND="x11-libs/gtk+:2
 	>=x11-libs/cairo-1.6.4-r1[svg]
 	>=x11-libs/pango-1.20.5
 	>=media-libs/jpeg-6b-r8
-	>=media-libs/libpixman-0.1.3
 	=dev-lang/ruby-1.8* 
 	>=dev-ruby/rubygems-1.2.0
 	>=net-misc/curl-7.18.2
