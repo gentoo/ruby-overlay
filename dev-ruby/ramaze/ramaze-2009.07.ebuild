@@ -13,6 +13,6 @@ LICENSE="Ruby"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND=">=dev-ruby/innate-2009.06"
+RDEPEND=">=dev-ruby/innate-2009.07"
 DEPEND="${RDEPEND}"
 
