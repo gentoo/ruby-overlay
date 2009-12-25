@@ -6,9 +6,7 @@ EAPI=2
 USE_RUBY="ruby18 ruby19 jruby"
 
 RUBY_FAKEGEM_TASK_DOC="doc:rdoc"
-# tests fail right now because they require files that are not in the
-# distribution, contacted upstream about it.
-RUBY_FAKEGEM_TASK_TEST=""
+RUBY_FAKEGEM_TASK_TEST="test:spec"
 
 RAKE_FAKEGEM_DOCDIR="doc"
 RUBY_FAKEGEM_EXTRADOC="README HISTORY"
@@ -18,13 +16,14 @@ inherit ruby-fakegem
 DESCRIPTION="Helper class for launching cross-platform applications."
 HOMEPAGE="http://copiousfreetime.rubyforge.org/launchy/"
 
-# The LICENSE file contains a 3-clause BSD license; the README file
-# contains a standard as-is license; need to clear this up with the
-# author I guess.
-LICENSE="BSD"
+LICENSE="ISC"
 
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
 ruby_add_rdepend dev-ruby/configuration
+ruby_add_bdepend test dev-ruby/rcov
+
+# Tests fail, reported upstream
+RESTRIC=test
