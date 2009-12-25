@@ -1,6 +1,15 @@
 # ChangeLog for dev-lang/ruby
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ChangeLog,v 1.340 2008/07/15 18:07:15 graaff Exp $
+
+*ruby-1.9.1_p376 (25 Dec 2009)
+
+  25 Dec 2009; Alex Legler <a3li@gentoo.org>
+  -files/ruby19-mkmf-parallel-install.patch, +ruby-1.9.1_p376.ebuild,
+  -files/ruby19-rubygems-gentoo.patch, -files/ruby19-rubygems-proxy.patch,
+  -ruby-1.9.1_p129-r99.ebuild:
+  Bump to p376. USE WITH CARE: There might be a regression causing segfaults
+  wrt Threads.
 
   14 Apr 2009; Alex Legler <a3li@gentoo.org>
   +files/ruby19-test_handle_special_crossref.patch, ruby-1.9.1-r99.ebuild:
