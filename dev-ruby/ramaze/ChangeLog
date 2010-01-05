@@ -1,6 +1,9 @@
 # ChangeLog for dev-ruby/ramaze
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  05 Jan 2010; Hans de Graaff <graaff@gentoo.org> Manifest:
+  Fix Manifest.
 
   03 Aug 2009; Sergio D. Rodriguez Inclan (ZeRoX) <srinclan@gmail.com>
   ChangeLog:
