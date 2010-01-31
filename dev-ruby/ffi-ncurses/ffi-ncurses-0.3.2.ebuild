@@ -4,8 +4,8 @@
 
 EAPI=2
 
-# ruby18, ruby19 → need ruby-ffi, postponed till later
-USE_RUBY="jruby"
+# ruby19 → tests fail, mistake in the examples with Ruby 1.9 syntax
+USE_RUBY="ruby18 jruby"
 
 # No tests, unfortunately :(
 RUBY_FAKEGEM_TASK_TEST=""
@@ -27,8 +27,7 @@ KEYWORDS="~amd64"
 RDEPEND="sys-libs/ncurses"
 DEPEND="test? ( sys-libs/ncurses )"
 
-# Uncomment this after adding it, when adding ruby18/ruby19 support
-#ruby_add_rdepend virtual/ruby-ffi
+ruby_add_rdepend virtual/ruby-ffi
 
 all_ruby_prepare() {
 	# Rakefile tries to call .gitignore file
