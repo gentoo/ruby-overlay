@@ -1,8 +1,0 @@
-# ChangeLog for dev-ruby/extlib
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  24 Nov 2008; Alex Legler <gentoo@a3li.info> +metadata.xml,
-  +extlib-0.9.8.ebuild:
-  Initial commit, thanks to Cyril Mougel <cyril.mougel@gmail.com>.
-

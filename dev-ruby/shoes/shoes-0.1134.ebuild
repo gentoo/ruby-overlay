@@ -1,4 +1,4 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -9,8 +9,7 @@ MY_P=${PN}-${MY_PV}
 
 DESCRIPTION="Shoes is a very informal graphics and windowing toolkit for Ruby."
 HOMEPAGE="http://shoooes.net"
-SRC_URI="http://shoooes.net/dist/${MY_P}.tar.gz
-	-> ${P}.tar.gz"
+SRC_URI="http://dev.a3li.li/gentoo/distfiles/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
