@@ -2,6 +2,13 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*facebooker-1.0.70 (14 Jun 2010)
+
+  14 Jun 2010; Diego E. Pettenò <flameeyes@gentoo.org>
+  -facebooker-1.0.69.ebuild, +facebooker-1.0.70.ebuild:
+  Version bump, update to new syntax, don't force a specific Rails version
+  during testing, add Hoe dependencies.
+
 *facebooker-1.0.69 (18 May 2010)
 
   18 May 2010; Diego E. Pettenò <flameeyes@gentoo.org>
