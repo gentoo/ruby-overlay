@@ -14,7 +14,7 @@ RUBY_FAKEGEM_EXTRADOC="CHANGELOG.rdoc README.rdoc TODO.rdoc"
 
 RUBY_FAKEGEM_EXTRAINSTALL="generators rails templates init.rb"
 
-inherit ruby-fakegem eutils
+inherit ruby-fakegem versionator
 
 DESCRIPTION="Ruby wrapper over the Facebook REST API"
 HOMEPAGE="http://facebooker.rubyforge.org/"
@@ -31,16 +31,20 @@ ruby_add_bdepend "
 		dev-ruby/rails
 		dev-ruby/mocha
 		dev-ruby/hoe
+		dev-ruby/flexmock
 	)
 	doc? ( dev-ruby/hoe )"
 
 DEPEND="${DEPEND}
 	doc? ( media-gfx/graphviz )"
 
-all_ruby_prepare() {
-	# Disable forcing of Rails version, so that it works with both
-	# newer and olders; forcing the tests will do the trick.
-	sed -i -e "s:'rails',.*:'rails':" test/test_helper.rb || die
+RUBY_PATCHES=( "${FILESDIR}"/${P}-gentoo.patch )
+
+each_ruby_test() {
+	local rails_cpv=$(best_version =dev-ruby/rails-2*)
+	export RAILS_VERSION=$(get_version_component_range 1-3 ${rails_cpv#*/rails-})
+
+	each_fakegem_test
 }
 
 all_ruby_install() {

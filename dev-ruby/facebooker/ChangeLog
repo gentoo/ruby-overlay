@@ -2,6 +2,14 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*facebooker-1.0.71 (19 Jun 2010)
+
+  19 Jun 2010; Diego E. Pettenò <flameeyes@gentoo.org>
+  -facebooker-1.0.70.ebuild, +facebooker-1.0.71.ebuild,
+  +files/facebooker-1.0.71-gentoo.patch:
+  Version bump, fix the code as the original-release 1.0.71 is partly
+  broken.
+
 *facebooker-1.0.70 (14 Jun 2010)
 
   14 Jun 2010; Diego E. Pettenò <flameeyes@gentoo.org>
