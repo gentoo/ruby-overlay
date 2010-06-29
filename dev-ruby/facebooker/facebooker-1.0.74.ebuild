@@ -38,8 +38,6 @@ ruby_add_bdepend "
 DEPEND="${DEPEND}
 	doc? ( media-gfx/graphviz )"
 
-RUBY_PATCHES=( "${FILESDIR}"/${P}-gentoo.patch )
-
 each_ruby_test() {
 	local rails_cpv=$(best_version =dev-ruby/rails-2*)
 	export RAILS_VERSION=$(get_version_component_range 1-3 ${rails_cpv#*/rails-})
