@@ -1,6 +1,11 @@
 # ChangeLog for dev-ruby/dm-core
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*dm-core-0.9.7-r1 (02 Aug 2010)
+
+  02 Aug 2010; Hans de Graaff <graaff@gentoo.org> +dm-core-0.9.7-r1.ebuild:
+  Convert to ruby-fakegem based on initial patch by fauli.
 
   30 Nov 2008; Alex Legler <gentoo@a3li.info> +metadata.xml,
   +dm-core-0.9.7.ebuild:
