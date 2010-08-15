@@ -1,0 +1,10 @@
+# ChangeLog for dev-ruby/subcommand
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*subcommand-1.0.5 (15 Aug 2010)
+
+  15 Aug 2010; Hans de Graaff <graaff@gentoo.org> +subcommand-1.0.5.ebuild,
+  +metadata.xml:
+  Initial import for Palatina, requested by fauli.
+
