@@ -26,7 +26,6 @@ IUSE=""
 RESTRICT="test"
 
 ruby_add_bdepend "doc? ( dev-ruby/jeweler dev-ruby/yard )"
-ruby_add_bdepend "test? ( dev-ruby/jeweler dev-ruby/rspec )"
 
 # Tests currently run only against the current ruby interpreter. This
 # should be fixed before moving this to the main tree.
