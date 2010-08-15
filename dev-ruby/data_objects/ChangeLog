@@ -2,6 +2,12 @@
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*data_objects-0.10.2 (15 Aug 2010)
+
+  15 Aug 2010; Hans de Graaff <graaff@gentoo.org>
+  +data_objects-0.10.2.ebuild:
+  Version bump.
+
   05 Aug 2010; Hans de Graaff <graaff@gentoo.org>
   -data_objects-0.9.9.ebuild:
   Remove old version.
