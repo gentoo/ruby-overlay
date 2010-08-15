@@ -1,0 +1,10 @@
+# ChangeLog for dev-ruby/dm-do-adapter
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*dm-do-adapter-1.0.0 (15 Aug 2010)
+
+  15 Aug 2010; Hans de Graaff <graaff@gentoo.org>
+  +dm-do-adapter-1.0.0.ebuild, +metadata.xml:
+  Initial import for Palatina, requested by fauli.
+
