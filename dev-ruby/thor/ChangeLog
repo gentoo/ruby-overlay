@@ -1,6 +1,11 @@
 # ChangeLog for dev-ruby/thor
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*thor-0.14.0 (03 Sep 2010)
+
+  03 Sep 2010; Hans de Graaff <graaff@gentoo.org> +thor-0.14.0.ebuild:
+  Version bump.
 
   24 Nov 2008; Alex Legler <gentoo@a3li.info> +metadata.xml,
   +thor-0.9.8.ebuild:
