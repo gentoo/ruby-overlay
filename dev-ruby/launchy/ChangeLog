@@ -1,0 +1,9 @@
+# ChangeLog for dev-ruby/launchy
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*launchy-2.0.3 (19 Jul 2011)
+
+  19 Jul 2011; Hans de Graaff <graaff@gentoo.org> +launchy-2.0.3.ebuild:
+  Version bump. Not moving to main tree for same reason as flameeyes.
+
