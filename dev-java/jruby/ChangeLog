@@ -1,0 +1,7 @@
+# ChangeLog for dev-java/jruby
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  27 Sep 2011; Hans de Graaff <graaff@gentoo.org> jruby-1.6.4.ebuild:
+  yecht will stay bundled for now.
+

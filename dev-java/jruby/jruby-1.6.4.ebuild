@@ -34,7 +34,6 @@ CDEPEND=">=dev-java/bytelist-1.0.8:0
 	dev-java/ant-core:0
 	dev-java/bsf:2.3
 	dev-java/osgi-core-api
-	dev-java/yecht
 	dev-java/snakeyaml"
 
 RDEPEND="${CDEPEND}
