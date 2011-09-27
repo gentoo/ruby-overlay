@@ -191,15 +191,3 @@ src_install() {
 		'(' '(' -path '*rubygems*' -not -name 'jruby.rb' ')' -or -name 'ubygems.rb' -or -name 'datadir.rb' ')' \
 		-delete || die
 }
-
-pkg_postinst() {
-	ewarn "If you're updating from <=jruby-1.4.0, you're going to get errors related"
-	ewarn "to gentoo.rb load failure."
-	ewarn "This is due to a stray definition of JRUBY_OPTS variable from the previous ebuilds."
-	ewarn "To solve the problem, either login in a new shell, use 'env -i ${SHELL} --login'"
-	ewarn "or explicitly unset the variable before running jruby."
-	ewarn ""
-	ewarn "Currently this package introduces issues/bugs that are not present within upstream"
-	ewarn "releases.  Therefore if you are wanting a stable build of jruby please do not"
-	ewarn "use this package."
-}

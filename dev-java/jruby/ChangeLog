@@ -3,5 +3,8 @@
 # $Header: $
 
   27 Sep 2011; Hans de Graaff <graaff@gentoo.org> jruby-1.6.4.ebuild:
+  Drop old pkg_postinst instrcutions for upgrading from pre 1.4 jruby versions.
+
+  27 Sep 2011; Hans de Graaff <graaff@gentoo.org> jruby-1.6.4.ebuild:
   yecht will stay bundled for now.
 
