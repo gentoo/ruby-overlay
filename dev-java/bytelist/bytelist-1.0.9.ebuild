@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-java/bytelist/bytelist-1.0.6.ebuild,v 1.5 2010/10/15 12:35:53 ranger Exp $
 
@@ -8,11 +8,13 @@ inherit java-pkg-2 java-ant-2
 
 DESCRIPTION="JRuby support library"
 HOMEPAGE="http://jruby.codehaus.org/"
-SRC_URI="http://dev.a3li.li/gentoo/distfiles/${P}.tar.bz2"
+SRC_URI="https://github.com/jruby/bytelist/tarball/${PV} -> ${P}.tgz"
 LICENSE="|| ( CPL-1.0 GPL-2 LGPL-2.1 )"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~x86-solaris"
 IUSE=""
+
+S="${WORKDIR}/jruby-bytelist-51b14c4"
 
 RDEPEND=">=virtual/jre-1.5
 	dev-java/jcodings"
