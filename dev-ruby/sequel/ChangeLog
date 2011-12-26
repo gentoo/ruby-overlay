@@ -1,6 +1,9 @@
 # ChangeLog for dev-ruby/sequel
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  26 Dec 2011; Hans de Graaff <graaff@gentoo.org> -sequel-2.5.0.ebuild:
+  Remove old version.
 
   12 Oct 2008; Alex Legler <gentoo@a3li.info> +sequel-2.6.0.ebuild:
   Version bump
