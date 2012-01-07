@@ -13,10 +13,10 @@ HOMEPAGE="http://github.com/jruby/jnr-posix/"
 SRC_URI="http://github.com/jruby/${PN}/tarball/${PV} -> ${P}.tar.gz"
 LICENSE="|| ( CPL-1.0 GPL-2 LGPL-2.1 )"
 SLOT="0"
-KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux ~x86-solaris"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~x86-solaris"
 IUSE=""
 
-CDEPEND=">=dev-java/jaffl-0.5.9:0
+CDEPEND=">=dev-java/jaffl-0.5.10:0
 	>=dev-java/constantine-0.7:0"
 
 RDEPEND=">=virtual/jre-1.5

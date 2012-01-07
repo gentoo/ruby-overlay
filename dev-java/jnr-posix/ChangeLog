@@ -3,5 +3,8 @@
 # $Header: $
 
   07 Jan 2012; Hans de Graaff <graaff@gentoo.org> jnr-posix-1.1.8.ebuild:
+  Raise jaffl dependency so that the test suite works.
+
+  07 Jan 2012; Hans de Graaff <graaff@gentoo.org> jnr-posix-1.1.8.ebuild:
   Apply fix for library load errors by ali_bush.
 
