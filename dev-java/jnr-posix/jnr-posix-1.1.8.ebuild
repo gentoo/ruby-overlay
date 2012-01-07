@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-java/jnr-posix/jnr-posix-1.1.4.ebuild,v 1.5 2010/07/17 09:07:21 fauli Exp $
 
@@ -65,6 +65,6 @@ src_test() {
 
 	ANT_TASKS="ant-junit4 ant-nodeps" eant test \
 		-Dlibs.junit_4.classpath="$(java-pkg_getjars --with-dependencies junit-4)" \
-		-Djava.library.path="$(java-config -di jaffl,constantine,jffi-0.4)" \
+		-Drun.jvmargs="-Djava.library.path=\"$(java-config -di jaffl,constantine,jffi-0.4)\"" \
 		${EANT_EXTRA_ARGS}
 }
