@@ -63,7 +63,7 @@ EANT_EXTRA_ARGS="-Dreference.jffi.jar=lib/jffi.jar \
 	-D\"already.built.${S}\"=true"
 
 src_install() {
-	java-pkg_dojar "dist/${PN}-${JAR_VERSION}.jar"
+	java-pkg_newjar "dist/${PN}-${JAR_VERSION}.jar"
 	use doc && java-pkg_dojavadoc dist/javadoc
 	use source && java-pkg_dosrc src/*
 }

@@ -2,6 +2,9 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Jan 2012; Hans de Graaff <graaff@gentoo.org> jaffl-0.5.10.ebuild:
+  Install jar properly, fix by ali_bush.
+
 *jaffl-0.5.10 (07 Jan 2012)
 
   07 Jan 2012; Hans de Graaff <graaff@gentoo.org> +jaffl-0.5.10.ebuild:
