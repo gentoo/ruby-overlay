@@ -1,6 +1,15 @@
 # ChangeLog for dev-java/jruby
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*jruby-1.6.5.1 (08 Jan 2012)
+
+  08 Jan 2012; Hans de Graaff <graaff@gentoo.org> jruby-1.6.4.ebuild,
+  +jruby-1.6.5.1.ebuild:
+  Add jruby 1.6.5.1 work-in-progress ebuild for testing.
+
+  26 Dec 2011; Hans de Graaff <graaff@gentoo.org> jruby-1.6.4.ebuild:
+  This is an experimental version, mark it testing.
 
   27 Sep 2011; Hans de Graaff <graaff@gentoo.org> jruby-1.6.4.ebuild:
   Drop old pkg_postinst instrcutions for upgrading from pre 1.4 jruby versions.

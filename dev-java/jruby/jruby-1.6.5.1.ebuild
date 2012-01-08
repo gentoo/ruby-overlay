@@ -20,7 +20,7 @@ CDEPEND=">=dev-java/bytelist-1.0.8:0
 	>=dev-java/constantine-0.6:0
 	>=dev-java/jline-0.9.94:0
 	>=dev-java/joni-1.1.3:0
-	>=dev-java/jnr-posix-1.1.3:0
+	>=dev-java/jnr-posix-1.1.8:0
 	>=dev-java/jnr-netdb-1.0:0
 	>=dev-java/jvyamlb-0.2.5:0
 	>=dev-java/asm-3.2:3
@@ -34,7 +34,7 @@ CDEPEND=">=dev-java/bytelist-1.0.8:0
 	dev-java/ant-core:0
 	dev-java/bsf:2.3
 	dev-java/osgi-core-api
-	dev-java/snakeyaml"
+	>=dev-java/snakeyaml-1.9"
 
 RDEPEND="${CDEPEND}
 	>=virtual/jre-1.6"
