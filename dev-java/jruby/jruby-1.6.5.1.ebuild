@@ -16,16 +16,17 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bsf ssl"
 
+# jffi still needed? Or do we call that jnr-ffi?
 CDEPEND=">=dev-java/bytelist-1.0.8:0
 	>=dev-java/constantine-0.6:0
 	>=dev-java/jline-0.9.94:0
 	>=dev-java/joni-1.1.3:0
-	>=dev-java/jnr-posix-1.1.8:0
+	>=dev-java/jnr-posix-1.1.8:1.1
 	>=dev-java/jnr-netdb-1.0:0
 	>=dev-java/jvyamlb-0.2.5:0
 	>=dev-java/asm-3.2:3
 	>=dev-java/jcodings-1.0.5:0
-	>=dev-java/jffi-0.7_pre:0.4
+	>=dev-java/jffi-1.0.10:1.0
 	dev-java/joda-time:0
 	dev-util/jay:0[java]
 	dev-java/nailgun:0
@@ -67,8 +68,8 @@ GEMS=${RUBY_HOME}/gems
 JAVA_ANT_REWRITE_CLASSPATH="true"
 JAVA_ANT_IGNORE_SYSTEM_CLASSES="true"
 EANT_GENTOO_CLASSPATH="ant-core asm-3 bsf-2.3 bytelist constantine jay \
-jcodings jffi-0.4 jline constantine \
-joda-time joni jnr-posix jnr-netdb jvyamlb nailgun jaffl jgrapht osgi-core-api \
+jcodings jffi-1.0 jline constantine \
+joda-time joni jnr-posix-1.1 jnr-netdb jvyamlb nailgun jaffl jgrapht osgi-core-api \
 snakeyaml"
 EANT_NEEDS_TOOLS="true"
 
