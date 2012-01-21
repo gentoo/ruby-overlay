@@ -1,8 +1,0 @@
-# ChangeLog for dev-ruby/randexp
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-  30 Nov 2008; Alex Legler <gentoo@a3li.info> +metadata.xml,
-  +randexp-0.1.4.ebuild:
-  Initial commit, thanks to Cyril Mougel <cyril.mougel@gmail.com>.
-
