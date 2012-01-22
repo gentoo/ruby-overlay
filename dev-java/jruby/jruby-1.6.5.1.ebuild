@@ -40,6 +40,7 @@ CDEPEND=">=dev-java/bytelist-1.0.8:0
 RDEPEND="${CDEPEND}
 	>=virtual/jre-1.6"
 
+# Is jna-posix still needed? Or has that been renamed to jnr-posix?
 DEPEND="${CDEPEND}
 	>=virtual/jdk-1.6
 	test? (
@@ -109,7 +110,7 @@ java_prepare() {
 	sed -r -i \
 		-e 's/maxmemory="128m"/maxmemory="192m"/' \
 		-e "/RetroWeaverTask/d" \
-		-e "/<zipfileset .+\/>/d" \
+		-e "/yecht/! { /<zipfileset .+\/>/d }" \
 		build.xml || die
 
 	sed -i -e '/Arndt/d' src/org/jruby/RubyBigDecimal.java
@@ -125,7 +126,9 @@ EOF
 }
 
 src_compile() {
-	local flags=""
+	# Avoid generating the ri cache since that currently fails.
+	local flags="-Dgenerate-ri-cache.hasrun=true"
+	#local flags=""
 	use bsf && flags="-Dbsf.present=true"
 
 	export RUBYOPT=""
