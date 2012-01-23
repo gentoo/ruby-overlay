@@ -149,13 +149,14 @@ index 731f85e..8299557 100755
  if $cygwin; then
    JRUBY_HOME=`cygpath --mixed "$JRUBY_HOME"`
    JRUBY_SHELL=`cygpath --mixed "$JRUBY_SHELL"`
-@@ -354,7 +264,7 @@ if [ "$VERIFY_JRUBY" != "" ]; then
+@@ -354,7 +264,8 @@ if [ "$VERIFY_JRUBY" != "" ]; then
        echo "Running with instrumented profiler"
    fi
  
 -  "$JAVACMD" $PROFILE_ARGS $JAVA_OPTS "$JFFI_OPTS" "${java_args[@]}" -classpath "$JRUBY_CP$CP_DELIMITER$CP$CP_DELIMITER$CLASSPATH" \
 +  "$JAVACMD" $PROFILE_ARGS $JAVA_OPTS "${java_args[@]}" -classpath "$JRUBY_CP$CP_DELIMITER$CP$CP_DELIMITER$CLASSPATH" \
      "-Djruby.home=$JRUBY_HOME" \
++    "-Djruby.bindir=/usr/bin" \
      "-Djruby.lib=$JRUBY_HOME/lib" -Djruby.script=jruby \
      "-Djruby.shell=$JRUBY_SHELL" \
 @@ -377,7 +287,7 @@ if [ "$VERIFY_JRUBY" != "" ]; then
@@ -167,12 +168,13 @@ index 731f85e..8299557 100755
        "-Djruby.home=$JRUBY_HOME" \
        "-Djruby.lib=$JRUBY_HOME/lib" -Djruby.script=jruby \
        "-Djruby.shell=$JRUBY_SHELL" \
-@@ -390,7 +300,7 @@ else
+@@ -390,7 +300,8 @@ else
  
      exit $JRUBY_STATUS
    else
 -    exec "$JAVACMD" $JAVA_OPTS "$JFFI_OPTS" "${java_args[@]}" -Xbootclasspath/a:"$JRUBY_CP" -classpath "$CP$CP_DELIMITER$CLASSPATH" \
 +    exec "$JAVACMD" $JAVA_OPTS "${java_args[@]}" -Xbootclasspath/a:"$JRUBY_CP" -classpath "$CP$CP_DELIMITER$CLASSPATH" \
        "-Djruby.home=$JRUBY_HOME" \
++      "-Djruby.bindir=/usr/bin" \
        "-Djruby.lib=$JRUBY_HOME/lib" -Djruby.script=jruby \
        "-Djruby.shell=$JRUBY_SHELL" \

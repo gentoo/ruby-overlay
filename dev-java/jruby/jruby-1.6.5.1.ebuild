@@ -121,11 +121,6 @@ java_prepare() {
 	# Delete the bundled JARs but keep invokedynamic.jar.
 	# No source is available and it's only a dummy anyway.
 	find build_lib -name "*.jar" ! -name "jsr292-mock.jar" ! -name "yecht.jar" -delete || die
-
-	# change some defaults for Gentoo to work properly
-	cat - >> src/org/jruby/jruby.properties <<EOF
-ruby.bindir = /usr/bin
-EOF
 }
 
 src_compile() {
