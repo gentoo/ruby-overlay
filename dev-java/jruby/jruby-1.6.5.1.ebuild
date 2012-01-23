@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-java/jruby/jruby-1.5.6.ebuild,v 1.2 2011/06/14 18:59:32 maekke Exp $
 
-EAPI="2"
+EAPI="4"
 JAVA_PKG_IUSE="doc source test"
 inherit eutils java-pkg-2 java-ant-2
 
@@ -17,30 +17,34 @@ KEYWORDS="~amd64 ~x86"
 IUSE="bsf ssl"
 
 # jffi still needed? Or do we call that jnr-ffi?
+#  jnr-ffi depends on jffi which depends on libffi
 CDEPEND=">=dev-java/bytelist-1.0.8:0
-	>=dev-java/constantine-0.6:0
 	>=dev-java/jline-0.9.94:0
 	>=dev-java/joni-1.1.3:0
-	>=dev-java/jnr-posix-1.1.8:1.1
 	>=dev-java/jnr-netdb-1.0:0
 	>=dev-java/jvyamlb-0.2.5:0
 	>=dev-java/asm-3.2:3
 	>=dev-java/jcodings-1.0.5:0
-	>=dev-java/jffi-1.0.10:1.0
+	dev-java/jffi:1.0
+	dev-java/jnr-constants:0
+	dev-java/jnr-ffi:0.5
+	dev-java/jnr-posix:1.1
 	dev-java/joda-time:0
 	dev-util/jay:0[java]
 	dev-java/nailgun:0
-	dev-java/jaffl:0
 	dev-java/jgrapht:0
 	dev-java/ant-core:0
 	dev-java/bsf:2.3
-	dev-java/osgi-core-api
-	>=dev-java/snakeyaml-1.9"
+	dev-java/osgi-core-api:0
+	>=dev-java/snakeyaml-1.9:0"
 
 RDEPEND="${CDEPEND}
 	>=virtual/jre-1.6"
 
 # Is jna-posix still needed? Or has that been renamed to jnr-posix?
+#  jna-posix is the original project name which was abononed years ago.
+#  jnr-posix < 1.1.8 are from the original fork
+#  later jnr-posix are from the jnr umbrella project.
 DEPEND="${CDEPEND}
 	>=virtual/jdk-1.6
 	test? (
@@ -50,7 +54,6 @@ DEPEND="${CDEPEND}
 		java-virtuals/jdk-with-com-sun
 		dev-java/commons-logging:0
 		dev-java/xalan:0
-		>=dev-java/jna-posix-1.0.1:0
 	)
 	!!<dev-ruby/jruby-1.3.1-r1"
 
@@ -68,9 +71,9 @@ GEMS=${RUBY_HOME}/gems
 
 JAVA_ANT_REWRITE_CLASSPATH="true"
 JAVA_ANT_IGNORE_SYSTEM_CLASSES="true"
-EANT_GENTOO_CLASSPATH="ant-core asm-3 bsf-2.3 bytelist constantine jay \
-jcodings jffi-1.0 jline constantine \
-joda-time joni jnr-posix-1.1 jnr-netdb jvyamlb nailgun jaffl jgrapht osgi-core-api \
+EANT_GENTOO_CLASSPATH="ant-core asm-3 bsf-2.3 bytelist jnr-constants jay \
+jcodings jffi-1.0 jline \
+joda-time joni jnr-ffi-0.5 jnr-posix-1.1 jnr-netdb jvyamlb nailgun jgrapht osgi-core-api \
 snakeyaml"
 EANT_NEEDS_TOOLS="true"
 
@@ -101,7 +104,7 @@ pkg_setup() {
 }
 
 java_prepare() {
-	epatch "${FILESDIR}"/${PN}-1.6.0-system-jars.patch
+	epatch "${FILESDIR}"/${PN}-bash-launcher.patch
 	epatch "${FILESDIR}/1.5.1/build.xml.patch"
 
 	# We don't need to use Retroweaver. There is a jarjar and a regular jar
@@ -169,25 +172,28 @@ src_test() {
 }
 
 src_install() {
-	local bin
-
 	java-pkg_dojar lib/${PN}.jar
 	dodoc README docs/{*.txt,README.*} || die
 
 	use doc && java-pkg_dojavadoc docs/api
 	use source && java-pkg_dosrc src/org
 
-	# We run the sed here in install so that we don't get the wrong
-	# data during the test phase!
-	sed \
-		-e '/++ebuild-cut-here++/, /--ebuild-cut-here--/ d' \
-		-e '/^JRUBY_HOME=/s:=:=/usr/share/jruby:' \
-		bin/jruby.sh > "${T}"/jruby
+# Use the bash based launcher to preserve whitespace in arguments.
+# Ie allow >jruby -e "puts 'hello'"< to work otherwise
+# >jruby -e "\"puts 'hello'\""< is needed.
+#
+#	# We run the sed here in install so that we don't get the wrong
+#	# data during the test phase!
+#	sed \
+#		-e '/++ebuild-cut-here++/, /--ebuild-cut-here--/ d' \
+#		-e '/^JRUBY_HOME=/s:=:=/usr/share/jruby:' \
+#		bin/jruby.sh > "${T}"/jruby
 
-	dobin "${T}"/jruby "${S}"/bin/j{irb{,_swing},rubyc} || die
+	newbin bin/jruby.bash jruby
+	dobin bin/j{irb{,_swing},rubyc}
 
 	insinto "${RUBY_HOME}"
-	doins -r "${S}"/lib/ruby/{1.8,1.9,site_ruby} || die
+	doins -r "${S}"/lib/ruby/{1.8,1.9,site_ruby}
 
 	# Remove all the references to RubyGems as we're just going to
 	# install it through dev-ruby/rubygems.

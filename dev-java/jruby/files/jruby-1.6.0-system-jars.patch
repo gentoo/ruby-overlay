@@ -158,7 +158,7 @@
  
  # Append the rest of the arguments
  ruby_args="${ruby_args} $@"
-@@ -257,33 +202,19 @@
+@@ -257,33 +202,17 @@
  
  JAVA_OPTS="$JAVA_OPTS $JAVA_MEM $JAVA_STACK"
  
@@ -172,8 +172,7 @@
 -    fi
 -  done
 -fi
-+JFFI_BOOT=$(java-config -di jffi-0.4)
- JFFI_OPTS="-Djffi.boot.library.path=$JFFI_BOOT"
+-JFFI_OPTS="-Djffi.boot.library.path=$JFFI_BOOT"
  
  
  if [ "$nailgun_client" != "" ]; then
