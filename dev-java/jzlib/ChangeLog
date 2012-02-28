@@ -1,0 +1,10 @@
+# ChangeLog for dev-java/jzlib
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*jzlib-1.1.1 (28 Feb 2012)
+
+  28 Feb 2012; Diego E. Pettenò <flameeyes@gentoo.org> +jzlib-1.1.1.ebuild,
+  +metadata.xml:
+  Import Chewi's jzlib bump (new slot) as required by JRuby 1.6.7.
+
