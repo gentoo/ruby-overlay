@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-USE_RUBY="ruby18 ree18 ruby19"
+USE_RUBY="ruby18 ree18 ruby19 jruby"
 
 RUBY_FAKEGEM_TASK_DOC="docs"
 
@@ -19,8 +19,10 @@ HOMEPAGE="http://seattlerb.rubyforge.org/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ppc64 ~s390 ~sh sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
 IUSE=""
+
+RUBY_PATCHES=( "${P}-remove-isolate.patch" )
 
 ruby_add_bdepend "doc? ( dev-ruby/rdoc )"
 
