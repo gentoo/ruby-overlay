@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=2
-USE_RUBY="ruby18 ree18 ruby19 jruby"
+USE_RUBY="ruby18 ree18 ruby19"
 
 RUBY_FAKEGEM_TASK_TEST="spec"
 
@@ -23,6 +23,6 @@ IUSE=""
 ruby_add_bdepend "
 	test? (
 		dev-ruby/rspec:2
-		dev-ruby/sqlite3
+		dev-ruby/rails:3
 		dev-ruby/mocha
 	)"
