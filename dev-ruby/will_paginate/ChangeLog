@@ -1,6 +1,9 @@
-# ChangeLog for dev-ruby/dm-core
+# ChangeLog for dev-ruby/will_paginate
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  16 Jun 2012; Hans de Graaff <graaff@gentoo.org> will_paginate-3.0.3.ebuild:
+  There is no rails:3 slot. Instead depend on any version of rails.
 
 *will_paginate-3.0.3 (30 May 2012)
 

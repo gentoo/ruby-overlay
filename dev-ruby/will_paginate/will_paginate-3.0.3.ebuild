@@ -23,6 +23,6 @@ IUSE=""
 ruby_add_bdepend "
 	test? (
 		dev-ruby/rspec:2
-		dev-ruby/rails:3
+		=dev-ruby/rails-3*
 		dev-ruby/mocha
 	)"
