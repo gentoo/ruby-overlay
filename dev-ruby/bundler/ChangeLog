@@ -1,0 +1,7 @@
+# ChangeLog for dev-ruby/bundler
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bundler/ChangeLog,v 1.41 2012/08/14 03:10:38 flameeyes Exp $
+
+*bundler-1.2.0 (03 Sep 2012)
+  03 Sep 2012; Michel Boaventura <michel.boaventura@gmail.com> +bundler-1.2.0.ebuild +Manifest +Changelog +metadata.xml:
+  Version bump
