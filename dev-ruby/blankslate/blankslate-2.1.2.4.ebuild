@@ -4,9 +4,10 @@
 
 EAPI=4
 
-USE_RUBY="ruby18 ruby19 ree18"
+#Rspec hasn't support to rbx!
+USE_RUBY="ruby18 ruby19 ree18 jruby"
 
-RUBY_FAKEGEM_RECIPE_TEST="rspec"
+RUBY_FAKEGEM_TASK_TEST="spec"
 
 # No documentation task
 RUBY_FAKEGEM_TASK_DOC=""
@@ -24,4 +25,10 @@ IUSE=""
 
 ruby_add_rdepend virtual/rubygems
 
-ruby_add_bdepend "test? ( dev-ruby/bundler dev-ruby/rspec )"
+ruby_add_bdepend "test? ( dev-ruby/rspec )"
+
+all_ruby_prepare() {
+	#Bundler isn't really necessary here, and it doesn't work with jruby
+	sed -i -e "2s/require 'bundler'//" Rakefile || die
+	sed -i -e "3s/Bundler::GemHelper.install_tasks//" Rakefile || die
+}
