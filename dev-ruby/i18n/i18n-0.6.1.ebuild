@@ -15,7 +15,7 @@ DESCRIPTION="Add Internationalization support to your Ruby application."
 HOMEPAGE="http://rails-i18n.org/"
 
 LICENSE="MIT"
-SLOT=0
+SLOT="0.6"
 KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE=""
 
