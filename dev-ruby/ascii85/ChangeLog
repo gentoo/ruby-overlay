@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/bundler
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*ascii85-1.0.2 (06 Nov 2012)
+  06 Nov 2012; Michel Boaventura <michel.boaventura@gmail.com> +ascii85-1.0.2.ebuild,
+  +ChangeLog +Manifest +metadata.xml:
+  Bump version to 1.0.2
