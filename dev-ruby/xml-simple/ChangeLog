@@ -1,9 +1,0 @@
-# ChangeLog for dev-ruby/dm-core
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*xml-simple-1.1.2 (04 Nov 2012)
-
-  04 Nov 2012; Michel Boaventura <michel.boaventura@gmail.com> +ChangeLog,
-  +xml-simple-1.1.2.ebuild, +Manifest, +metadata.xml:
-  Bump to version 1.1.2.
