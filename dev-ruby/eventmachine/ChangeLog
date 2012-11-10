@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/eventmachine
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*bundler-1.2.0 (08 Sep 2012)
+  03 Sep 2012; Michel Boaventura <michel.boaventura@gmail.com> +ChangeLog
+  +eventmachine-1.0.0.ebuild +metadata.xml +Manifest:
+  Version bump and add support to ruby18 and ree18. Jruby continues to fail badly
