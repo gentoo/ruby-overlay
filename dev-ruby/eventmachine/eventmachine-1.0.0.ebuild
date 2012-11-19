@@ -18,13 +18,15 @@ HOMEPAGE="http://rubyeventmachine.com"
 
 LICENSE="|| ( GPL-2 Ruby )"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="${DEPEND}
 	dev-libs/openssl"
 RDEPEND="${RDEPEND}
 	dev-libs/openssl"
+
+ruby_add_bdepend "test? ( >=dev-ruby/rake-compiler-0.8.1 )"
 
 all_ruby_prepare() {
 	# fix test issue - upstream b96b736b39261f7d74f013633cc7cd619afa20c4
