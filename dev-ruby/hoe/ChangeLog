@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*hoe-3.3.0 (19 Nov 2012)
+
+  19 Nov 2012; Michel Boaventura <michel.boaventura@gmail.com> +hoe-3.3.0.ebuild -hoe-3.1.1.ebuild:
+  Bump to version 3.3.0 and removes 3.1.1. Also fix KEYWORDS and doc's build.
+
 *hoe-3.1.1 (04 Nov 2012)
 
   04 Nov 2012; Michel Boaventura <michel.boaventura@gmail.com> +hoe-3.1.1.ebuild, -hoe-3.0.6.ebuild:
