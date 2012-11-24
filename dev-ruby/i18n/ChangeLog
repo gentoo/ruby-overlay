@@ -1,7 +1,0 @@
-# ChangeLog for dev-ruby/bundler
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bundler/ChangeLog,v 1.41 2012/08/14 03:10:38 flameeyes Exp $
-
-*i18n-0.6.1 (04 Sep 2012)
-  04 Sep 2012; Michel Boaventura <michel.boaventura@gmail.com> +i18n-0.6.1.ebuild +ChangeLog +Manifest +metadata.xml:
-  Bump version
