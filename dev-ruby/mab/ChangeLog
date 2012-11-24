@@ -1,7 +1,0 @@
-# ChangeLog for dev-ruby/bundler
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*mab-0.0.2 (10 Nov 2012)
-  10 Nov 2012; Michel Boaventura <michel.boaventura@gmail.com> +mab-0.2.2.ebuild +ChangeLog +Manifest +metadata.xml:
-  Add mab, new dependency for dev-ruby/camping
