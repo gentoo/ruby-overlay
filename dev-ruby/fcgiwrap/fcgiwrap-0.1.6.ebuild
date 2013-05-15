@@ -1,4 +1,4 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,7 @@ KEYWORDS="~amd64 ~x86"
 LICENSE="|| ( Ruby GPL-2 )"
 IUSE=""
 
-RDEPEND="dev-ruby/ruby-fcgi"
+RDEPEND="dev-ruby/fcgi"
 
 src_install() {
 	local siteruby=$(${RUBY} -r rbconfig -e \
