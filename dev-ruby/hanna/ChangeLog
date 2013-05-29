@@ -1,0 +1,6 @@
+# ChangeLog for dev-ruby/hanna
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  29 May 2013; Manuel Rueger (mrueg) gentoo@rueg.eu +metadata.xml:
+  dev-ruby/hanna: Add metadata.xml
