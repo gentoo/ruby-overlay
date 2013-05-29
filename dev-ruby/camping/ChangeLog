@@ -1,7 +1,0 @@
-# ChangeLog for dev-ruby/bundler
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*camping-2.1.523 (10 Nov 2012)
-  10 Nov 2012; Michel Boaventura <michel.boaventura@gmail.com> +camping-2.1.523.ebuild +ChangeLog +Manifest +metadata.xml:
-  Bump dev-ruby/camping to 2.1.523
