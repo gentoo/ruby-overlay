@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -35,6 +35,7 @@ ruby_add_bdepend "
 	)
 	doc? ( dev-ruby/hoe )"
 
+RDEPEND="${RDEPEND}"
 DEPEND="${DEPEND}
 	doc? ( media-gfx/graphviz )"
 
