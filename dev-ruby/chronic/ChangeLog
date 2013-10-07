@@ -2,6 +2,9 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/chronic/ChangeLog,v 1.13 2013/09/09 02:53:05 mrueg Exp $
 
+  07 Oct 2013; Peter Wilmott <p@p8952.info> chronic-0.10.2.ebuild:
+  skip tests which error using ruby18
+
 *chronic-0.10.2 (07 Oct 2013)
 
   07 Oct 2013;  <p@p8952.info> +chronic-0.10.2.ebuild:
