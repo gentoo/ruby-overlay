@@ -4,7 +4,7 @@
 
 *chronic-0.10.2 (07 Oct 2013)
 
-  07 Oct 2013;  <peter@gentoo.org> +chronic-0.10.2.ebuild:
+  07 Oct 2013;  <p@p8952.info> +chronic-0.10.2.ebuild:
   version bump to 0.10.2
 
   09 Sep 2013; Manuel Rüger <mrueg@gentoo.org> -chronic-0.6.7.ebuild,
