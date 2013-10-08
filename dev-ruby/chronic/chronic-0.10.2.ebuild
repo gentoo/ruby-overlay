@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/chronic/chronic-0.9.1.ebuild,v 1.1 2013/02/28 07:34:00 graaff Exp $
 
 EAPI=5
-USE_RUBY="ruby18 ree18 jruby ruby19"
+USE_RUBY="ruby18 jruby ruby19"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="HISTORY.md README.md"
