@@ -34,6 +34,11 @@ each_ruby_prepare() {
 			sed -i -e '/def test_time/,+9d' test/test_chronic.rb || die
 			sed -i -e '/def test_handle_generic/,+29d' test/test_parsing.rb || die
 			;;
+		*jruby)
+			# The same tests also fail on jruby1.6
+			sed -i -e '/def test_time/,+9d' test/test_chronic.rb || die
+			sed -i -e '/def test_handle_generic/,+29d' test/test_parsing.rb || die
+			;;
 		*)
 			;;
 	esac

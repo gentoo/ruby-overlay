@@ -2,6 +2,9 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/chronic/ChangeLog,v 1.13 2013/09/09 02:53:05 mrueg Exp $
 
+  08 Oct 2013; Peter Wilmott <p@p8952.info> chronic-0.10.2.ebuild:
+  skip broken tests on jruby(1.6)
+
   08 Oct 2013; Peter Wilmott <p@p8952.info> chronic-0.10.2.ebuild,
   chronic-0.9.1.ebuild:
   remove ree18 targets
