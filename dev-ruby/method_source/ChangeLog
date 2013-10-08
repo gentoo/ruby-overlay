@@ -1,0 +1,9 @@
+# ChangeLog for dev-ruby/method_source
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*method_source-0.8.2 (08 Oct 2013)
+
+  08 Oct 2013; Peter Wilmott <p@p8952.info> +metadata.xml,
+  +method_source-0.8.2.ebuild:
+  dev-ruby/method_source, add ruby20 target
