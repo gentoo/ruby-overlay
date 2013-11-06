@@ -7,15 +7,19 @@ USE_RUBY="ruby19"
 
 inherit ruby-fakegem
 
+RUBY_FAKEGEM_TASK_TEST=""
+RUBY_FAKEGEM_TASK_DOC=""
+
 DESCRIPTION="An Object/Relational Mapper for Ruby"
 HOMEPAGE="http://datamapper.org/"
-
-RESTRICT="test"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
+
+ruby_add_bdepend "doc? ( >=dev-ruby/hoe-2.12 )"
+ruby_add_bdepend "test? ( >=dev-ruby/hoe-2.12 )"
 
 ruby_add_rdepend "
 	=dev-ruby/dm-core-1.2.1
