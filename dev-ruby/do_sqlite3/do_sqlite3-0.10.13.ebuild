@@ -6,12 +6,12 @@ EAPI=5
 USE_RUBY="ruby19"
 
 RUBY_FAKEGEM_TASK_TEST="spec"
-RUBY_FAKEGEM_TASK_DOC="yard"
+RUBY_FAKEGEM_TASK_DOC=""
 
 RUBY_FAKEGEM_DOCDIR="doc"
 RUBY_FAKEGEM_EXTRADOC="README.markdown"
 
-inherit ruby-fakegem
+inherit multilib ruby-fakegem
 
 DESCRIPTION="Implements the DataObjects API for Sqlite3"
 HOMEPAGE="http://datamapper.org/"
@@ -24,10 +24,20 @@ IUSE=""
 DEPEND+="dev-db/sqlite:3"
 
 ruby_add_bdepend "doc? ( >=dev-ruby/yard-0.8.7 )"
-ruby_add_bdepend "test? ( dev-ruby/rake-compiler dev-ruby/rspec:2 )"
+ruby_add_bdepend "test? ( dev-ruby/rspec:2 )"
 
 ruby_add_rdepend "dev-ruby/data_objects"
 
 all_ruby_prepare() {
 	cp "${FILESDIR}/${PN}.gemspec" "${WORKDIR}/all/${P}/${PN}.gemspec"
+	sed -i -e 's/, :compile//g' tasks/spec.rake 
+}
+
+each_ruby_configure() {
+	${RUBY} -Cext/do_sqlite3 extconf.rb || die
+}
+
+each_ruby_compile() {
+	emake -Cext/do_sqlite3 V=1
+	cp -v ext/do_sqlite3/*$(get_modname) lib/ || die
 }
