@@ -30,7 +30,8 @@ ruby_add_rdepend "dev-ruby/data_objects"
 
 all_ruby_prepare() {
 	cp "${FILESDIR}/${PN}.gemspec" "${WORKDIR}/all/${P}/${PN}.gemspec"
-	sed -i -e 's/, :compile//g' tasks/spec.rake 
+	sed -i -e 's/, :compile//g' tasks/spec.rake
+	sed -i -e 's/.so//g' Rakefile
 }
 
 each_ruby_configure() {
@@ -39,5 +40,5 @@ each_ruby_configure() {
 
 each_ruby_compile() {
 	emake -Cext/do_sqlite3 V=1
-	cp -v ext/do_sqlite3/*$(get_modname) lib/ || die
+	mv ext/do_sqlite3/*$(get_modname) lib/do_sqlite3 || die
 }
