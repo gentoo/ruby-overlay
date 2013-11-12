@@ -10,13 +10,13 @@ RUBY_FAKEGEM_TASK_DOC="yard"
 
 RUBY_FAKEGEM_DOCDIR="doc"
 
-inherit ruby-fakegem
+inherit ruby-fakegem versionator
 
 DESCRIPTION="Sqlite3 Adapter for DataMapper"
 HOMEPAGE="http://datamapper.org/"
 
 LICENSE="MIT"
-SLOT="0"
+SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~amd64"
 IUSE=""
 
@@ -24,7 +24,7 @@ ruby_add_bdepend "doc? ( dev-ruby/jeweler >=dev-ruby/yard-0.8.7 )"
 ruby_add_bdepend "test? (
 	dev-ruby/jeweler
 	dev-ruby/rspec:0
-	=dev-ruby/dm-migrations-1.2.0 )"
+	dev-ruby/dm-migrations:1.2 )"
 
 ruby_add_rdepend "
 	dev-ruby/dm-do-adapter
