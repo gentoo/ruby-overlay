@@ -11,13 +11,13 @@ RUBY_FAKEGEM_TASK_DOC="yard"
 RUBY_FAKEGEM_DOCDIR="doc"
 RUBY_FAKEGEM_EXTRADOC="README.rdoc"
 
-inherit ruby-fakegem
+inherit ruby-fakegem versionator
 
 DESCRIPTION="DataMapper plugin providing support for aggregates on collections"
 HOMEPAGE="http://datamapper.org/"
 
 LICENSE="MIT"
-SLOT="0"
+SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~amd64"
 IUSE=""
 
@@ -27,7 +27,7 @@ ruby_add_bdepend "test? (
 	dev-ruby/rspec:0 )"
 
 ruby_add_rdepend "
-	=dev-ruby/dm-core-1.2.1
+	dev-ruby/dm-core:1.2
 	dev-ruby/data_objects"
 
 all_ruby_prepare() {
