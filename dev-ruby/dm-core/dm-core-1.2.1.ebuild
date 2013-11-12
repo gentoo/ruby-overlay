@@ -11,13 +11,13 @@ RUBY_FAKEGEM_TASK_DOC="yard"
 RUBY_FAKEGEM_DOCDIR="doc"
 RUBY_FAKEGEM_EXTRADOC="README.rdoc"
 
-inherit ruby-fakegem
+inherit ruby-fakegem versionator
 
 DESCRIPTION="DataMapper core library"
 HOMEPAGE="http://datamapper.org/"
 
 LICENSE="MIT"
-SLOT="0"
+SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~amd64"
 IUSE=""
 
