@@ -1,0 +1,9 @@
+# ChangeLog for dev-ruby/rainbow
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*rainbow-1.1.4 (28 Nov 2013)
+
+  28 Nov 2013; Peter Wilmott <p@p8952.info> +metadata.xml,
+  +rainbow-1.1.4.ebuild:
+  dev-ruby/rainbow: dependency for app-text/glark
