@@ -8,7 +8,7 @@ USE_RUBY="ruby18 ruby19 ruby20 jruby"
 
 RUBY_FAKEGEM_RECIPE_TEST="rspec"
 
-RUBY_FAKEGEM_TASK_DOC="rdoc"
+RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 
 RUBY_FAKEGEM_EXTRADOC="History.txt README.rdoc"
 
@@ -21,8 +21,6 @@ IUSE="test"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
-ruby_add_bdepend "doc? ( dev-ruby/bones )"
 
 all_ruby_prepare() {
 	# Remove default metadata because it confused jruby.
