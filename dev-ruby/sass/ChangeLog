@@ -1,8 +1,0 @@
-# ChangeLog for dev-ruby/sass
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*sass-3.2.12 (09 Oct 2013)
-
-  09 Oct 2013; Peter Wilmott <p@p8952.info> +metadata.xml, +sass-3.2.12.ebuild:
-  dev-ruby/sass: version bump
