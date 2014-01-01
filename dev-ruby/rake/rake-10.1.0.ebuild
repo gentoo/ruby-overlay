@@ -1,9 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/rake/rake-0.9.6.ebuild,v 1.5 2013/09/05 15:46:18 jer Exp $
 
-EAPI=4
-USE_RUBY="ruby18 ruby19 ruby20 jruby"
+EAPI=5
+USE_RUBY="ruby18 ruby19 ruby20 ruby21 jruby"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="CHANGES README.rdoc TODO"
@@ -28,7 +28,7 @@ RDEPEND="${RDEPEND}"
 RUBY_PATCHES=( "${P}-ruby-1.8-fix.patch" )
 
 ruby_add_bdepend "doc? ( dev-ruby/rdoc )
-	test? ( virtual/ruby-minitest dev-ruby/session dev-ruby/flexmock )"
+	test? ( virtual/ruby-minitest )"
 
 all_ruby_prepare() {
 	# Decompress the file. The compressed version has errors, ignore them.
