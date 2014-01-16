@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/parser
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*parser-2.1.4 (16 Jan 2014)
+
+  16 Jan 2014; Peter Wilmott <p@p8952.info> +metadata.xml, +parser-2.1.4.ebuild:
+  dev-ruby/parser: dependency for rubocop
