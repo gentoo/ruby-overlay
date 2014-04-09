@@ -1,0 +1,12 @@
+--- build.xml.~1~	2014-04-05 17:34:18.027962237 +0200
++++ build.xml	2014-04-05 17:35:06.770656344 +0200
+@@ -304,9 +304,6 @@
+     </target>
+ 
+     <target name="bootstrap" >
+-        <exec executable="mvn" >
+-            <arg line="-q -Pbootstrap" ></arg>
+-        </exec>
+     </target>
+ 
+     <target depends="prepare" description="Creates the Java API docs" name="apidocs" >
