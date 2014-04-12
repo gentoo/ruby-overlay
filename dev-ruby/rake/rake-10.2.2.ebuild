@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-ruby/rake/rake-0.9.6.ebuild,v 1.5 2013/09/05 15:46:18 jer Exp $
 
 EAPI=5
-USE_RUBY="ruby18 ruby19 ruby20 ruby21 jruby"
+USE_RUBY="ruby19 ruby20 ruby21 jruby"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="CHANGES README.rdoc TODO"
@@ -20,15 +20,12 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc"
 
-DEPEND="${DEPEND} app-arch/gzip"
-RDEPEND="${RDEPEND}"
-
-#This fix is already on upstream and will be fixed on next release
-#https://github.com/jimweirich/rake/commit/514da2cec2ef3ca821c444f6b7b24f51bdd6e5d4
-RUBY_PATCHES=( "${P}-ruby-1.8-fix.patch" )
+DEPEND+=" app-arch/gzip"
 
 ruby_add_bdepend "doc? ( dev-ruby/rdoc )
-	test? ( virtual/ruby-minitest )"
+	test? ( >=dev-ruby/hoe-3.7
+		virtual/ruby-minitest
+		)"
 
 all_ruby_prepare() {
 	# Decompress the file. The compressed version has errors, ignore them.

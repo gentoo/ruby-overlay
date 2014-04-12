@@ -2,6 +2,12 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*rake-10.2.2 (12 Apr 2014)
+
+  12 Apr 2014; Manuel Rüger <mrueg@gentoo.org> +rake-10.2.2.ebuild,
+  -files/rake-10.1.0-ruby-1.8-fix.patch, -rake-10.1.0.ebuild:
+  [dev-ruby/rake] Version bump. Remove old.
+
   01 Jan 2014; Hans de Graaff <graaff@gentoo.org> rake-10.1.0.ebuild:
   EAPI=5. Add ruby21. Drop session and flexmock dependencies. They are
   mentioned in the documentation but not actually used.
