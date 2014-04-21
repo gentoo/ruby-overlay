@@ -111,6 +111,7 @@ pkg_setup() {
 }
 
 java_prepare() {
+	epatch "${FILESDIR}"/${P}-mvn-ant-ant.patch
 	epatch "${FILESDIR}"/${P}-bash-launcher.patch
 #	epatch "${FILESDIR}/${P}-build.xml.patch"
 
