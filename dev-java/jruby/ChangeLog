@@ -2,6 +2,14 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*jruby-1.7.12 (21 Apr 2014)
+
+  21 Apr 2014; Manuel Rüger <mrueg@gentoo.org>
+  +files/jruby-1.7.12-bash-launcher.patch, +files/jruby-1.7.12-build.xml.patch,
+  +jruby-1.7.12.ebuild, -files/jruby-1.7.11-bash-launcher.patch,
+  -files/jruby-1.7.11-build.xml.patch, -jruby-1.7.11.ebuild:
+  [dev-java/jruby] Version bump.
+
 *jruby-1.7.11 (09 Apr 2014)
 
   09 Apr 2014; Hans de Graaff <graaff@gentoo.org> +jruby-1.7.11.ebuild,
@@ -9,4 +17,3 @@
   +metadata.xml:
   Work-in-progress version of jruby 1.7. Won't install due to trying to run
   maven to compile.
-

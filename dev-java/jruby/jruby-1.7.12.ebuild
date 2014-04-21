@@ -42,7 +42,7 @@ CDEPEND=">=dev-java/bytelist-1.0.8:0
 	dev-java/ant-core:0
 	dev-java/bsf:2.3
 	dev-java/osgi-core-api:0
-	>=dev-java/snakeyaml-1.9:1.9
+	>=dev-java/snakeyaml-1.11:0
 	dev-java/jzlib:1.1"
 
 RDEPEND="${CDEPEND}
