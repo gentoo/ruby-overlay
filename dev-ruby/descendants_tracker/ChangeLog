@@ -1,9 +1,0 @@
-# ChangeLog for dev-ruby/descendants_tracker
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*descendants_tracker-0.0.3 (25 Feb 2014)
-
-  25 Feb 2014; Peter Wilmott <p@p8952.info> +descendants_tracker-0.0.3.ebuild,
-  +metadata.xml:
-  dev-ruby/descendants_tracker: dependency for github_api
