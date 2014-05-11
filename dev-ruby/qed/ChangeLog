@@ -1,0 +1,9 @@
+# ChangeLog for dev-ruby/qed
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*qed-2.9.1 (11 May 2014)
+
+  11 May 2014; Peter Wilmott <p8952@gentoo.org> +metadata.xml,
+  +qed-2.9.1.ebuild:
+  dev-ruby/qed: Dependency for dev-ruby/hashery
