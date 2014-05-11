@@ -19,5 +19,12 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-# Tests cause circular dependencies with dev-ruby/qed
-RESTRICT="test"
+ruby_add_bdepend "test? (
+	dev-ruby/ae
+	dev-ruby/lemon
+	dev-ruby/rubytest
+	dev-ruby/rubytest-cli )"
+
+each_ruby_test() {
+	rubytest -r lemon -r ae test/ || 'tests failed'
+}
