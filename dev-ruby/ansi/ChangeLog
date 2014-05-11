@@ -1,0 +1,9 @@
+# ChangeLog for dev-ruby/ansi
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*ansi-1.4.3 (11 May 2014)
+
+  11 May 2014; Peter Wilmott <p8952@gentoo.org> +ansi-1.4.3.ebuild,
+  +metadata.xml:
+  dev-ruby/ansi: Dependency for dev-ruby/hashery
