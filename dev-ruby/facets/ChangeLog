@@ -1,0 +1,9 @@
+# ChangeLog for dev-ruby/facets
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*facets-2.9.3 (11 May 2014)
+
+  11 May 2014; Peter Wilmott <p8952@gentoo.org> +facets-2.9.3.ebuild,
+  +metadata.xml:
+  dev-ruby/facets: Dependency for dev-ruby/hashery
