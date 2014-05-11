@@ -1,0 +1,9 @@
+# ChangeLog for dev-ruby/brass
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*brass-1.2.1 (11 May 2014)
+
+  11 May 2014; Peter Wilmott <p8952@gentoo.org> +brass-1.2.1.ebuild,
+  +metadata.xml:
+  dev-ruby/brass: Dependency for dev-ruby/hashery
