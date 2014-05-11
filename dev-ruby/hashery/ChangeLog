@@ -1,0 +1,9 @@
+# ChangeLog for dev-ruby/hashery
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*hashery-2.1.1 (11 May 2014)
+
+  11 May 2014; Peter Wilmott <p8952@gentoo.org> +hashery-2.1.1.ebuild,
+  +metadata.xml:
+  dev-ruby/hashery: Dependency for dev-ruby/pdf-reader
