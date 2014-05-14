@@ -27,14 +27,8 @@ ruby_add_bdepend "test? (
 
 all_ruby_prepare() {
 
-	# Remove tests which try and write to /tmp
-	rm test/core/file/test_append.rb || die 'test removal failed'
-	rm test/core/file/test_create.rb || die 'test removal failed'
-	rm test/core/file/test_read_binary.rb || die 'test removal failed'
-	rm test/core/file/test_read_list.rb || die 'test removal failed'
-	rm test/core/file/test_rewrite.rb || die 'test removal failed'
-	rm test/core/file/test_write.rb || die 'test removal failed'
-	rm test/core/file/test_writelines.rb || die 'test removal failed'
+	# Tests need to write to tmp/
+	mkdir tmp/ || die 'mkdir failed'
 
 	# See TODO: https://github.com/rubyworks/facets/blob/2.9.3/test/core/kernel/test_source_location.rb
 	rm test/core/kernel/test_source_location.rb || die 'test removal failed'
