@@ -3,6 +3,9 @@
 # $Header: $
 
   14 May 2014; Peter Wilmott <p8952@gentoo.org> ansi-1.4.3.ebuild:
+  dev-ruby/ansi: Drop jruby targets due to test failures
+
+  14 May 2014; Peter Wilmott <p8952@gentoo.org> ansi-1.4.3.ebuild:
   dev-ruby/ansi: Add ruby20, ruby21, and jruby targets
 
 *ansi-1.4.3 (11 May 2014)
