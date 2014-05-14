@@ -3,6 +3,9 @@
 # $Header: $
 
   14 May 2014; Peter Wilmott <p8952@gentoo.org> rubytest-0.7.0.ebuild:
+  dev-ruby/rubytest: Drop jruby targets due to test failures
+
+  14 May 2014; Peter Wilmott <p8952@gentoo.org> rubytest-0.7.0.ebuild:
   dev-ruby/rubytest: Add ruby20, ruby21, and jruby targets
 
 *rubytest-0.7.0 (11 May 2014)
