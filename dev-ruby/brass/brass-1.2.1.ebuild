@@ -18,6 +18,3 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
-
-# Package does not include tests
-RESTRICT="test"
