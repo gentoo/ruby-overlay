@@ -23,5 +23,5 @@ ruby_add_bdepend "test? ( dev-ruby/ae dev-ruby/qed )"
 ruby_add_rdepend "dev-ruby/ansi"
 
 each_ruby_test() {
-	qed || die 'tests failed'
+	${RUBY} -S qed || die 'tests failed'
 }
