@@ -2,6 +2,9 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  14 May 2014; Peter Wilmott <p8952@gentoo.org> hashery-2.1.1.ebuild:
+  dev-ruby/hashery: Add ruby20, ruby21, and jruby targets
+
 *hashery-2.1.1 (11 May 2014)
 
   11 May 2014; Peter Wilmott <p8952@gentoo.org> +hashery-2.1.1.ebuild,
