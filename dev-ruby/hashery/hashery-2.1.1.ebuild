@@ -26,6 +26,6 @@ ruby_add_bdepend "test? (
 	dev-ruby/rubytest-cli )"
 
 each_ruby_test() {
-	qed || die 'tests failed'
-	rubytest -Ilib -Itest test/ || die 'tests failed'
+	${RUBY} -S qed || die 'tests failed'
+	${RUBY} -S rubytest -Ilib -Itest test/ || die 'tests failed'
 }
