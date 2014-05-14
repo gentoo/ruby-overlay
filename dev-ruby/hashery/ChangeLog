@@ -3,6 +3,9 @@
 # $Header: $
 
   14 May 2014; Peter Wilmott <p8952@gentoo.org> hashery-2.1.1.ebuild:
+  dev-ruby/hashery: Drop jruby targets due to test failures
+
+  14 May 2014; Peter Wilmott <p8952@gentoo.org> hashery-2.1.1.ebuild:
   dev-ruby/hashery: Add ruby20, ruby21, and jruby targets
 
 *hashery-2.1.1 (11 May 2014)
