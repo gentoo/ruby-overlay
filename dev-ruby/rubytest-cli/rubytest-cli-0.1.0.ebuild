@@ -20,6 +20,3 @@ KEYWORDS="~amd64"
 IUSE=""
 
 ruby_add_rdepend "dev-ruby/ansi >=dev-ruby/rubytest-0.7.0"
-
-# Package does not include tests
-RESTRICT="test"

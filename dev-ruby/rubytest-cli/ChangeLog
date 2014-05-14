@@ -3,6 +3,9 @@
 # $Header: $
 
   14 May 2014; Peter Wilmott <p8952@gentoo.org> rubytest-cli-0.1.0.ebuild:
+  dev-ruby/rubytest-cli: Remove RESTRICT="test"
+
+  14 May 2014; Peter Wilmott <p8952@gentoo.org> rubytest-cli-0.1.0.ebuild:
   dev-ruby/rubytest-cli: Add ruby20, ruby21, and jruby targets
 
 *rubytest-cli-0.1.0 (11 May 2014)
