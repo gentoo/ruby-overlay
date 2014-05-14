@@ -41,5 +41,5 @@ all_ruby_prepare() {
 }
 
 each_ruby_test() {
-	rubytest -r lemon -r ae -Ilib/core -Ilib/standard -Itest test/ || die 'tests failed'
+	${RUBY} -S rubytest -r lemon -r ae -Ilib/core -Ilib/standard -Itest test/ || die 'tests failed'
 }
