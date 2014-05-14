@@ -3,6 +3,9 @@
 # $Header: $
 
   14 May 2014; Peter Wilmott <p8952@gentoo.org> brass-1.2.1.ebuild:
+  dev-ruby/brass: Drop jruby targets due to test failures
+
+  14 May 2014; Peter Wilmott <p8952@gentoo.org> brass-1.2.1.ebuild:
   dev-ruby/brass: Remove RESTRICT="test"
 
   14 May 2014; Peter Wilmott <p8952@gentoo.org> brass-1.2.1.ebuild:
