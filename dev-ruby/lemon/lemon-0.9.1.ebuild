@@ -26,5 +26,5 @@ ruby_add_rdepend "
 	dev-ruby/rubytest"
 
 each_ruby_test() {
-	qed || die 'tests failed'
+	${RUBY} -S qed || die 'tests failed'
 }
