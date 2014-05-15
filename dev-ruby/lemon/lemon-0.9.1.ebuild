@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-ruby_add_bdepend "test? ( dev-ruby/ae dev-ruby/qed )"
+ruby_add_bdepend "test? ( dev-ruby/qed )"
 ruby_add_rdepend "
 	dev-ruby/ae
 	>=dev-ruby/ansi-1.3
