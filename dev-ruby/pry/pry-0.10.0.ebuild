@@ -34,7 +34,7 @@ test? (
 dev-ruby/gist
 >=dev-ruby/open4-1.3
 >=dev-ruby/rake-0.9
->=dev-ruby/mocha-1.0
+>=dev-ruby/mocha-1.0.0
 )"
 
 all_ruby_prepare() {
