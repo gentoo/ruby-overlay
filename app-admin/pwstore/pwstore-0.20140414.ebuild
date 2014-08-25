@@ -10,8 +10,8 @@ inherit ruby-single
 
 COMMIT="38745c9f91034d64aa182c1b3b20cb7ffb006f3e"
 
-DESCRIPTION="This is a sample skeleton ebuild file"
-HOMEPAGE="http://foo.example.org/"
+DESCRIPTION="Stores passwords in a set of encrypted files"
+HOMEPAGE="http://github.com/formorer/pwstore"
 SRC_URI="https://github.com/formorer/pwstore/archive/${COMMIT}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 

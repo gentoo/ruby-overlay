@@ -2,9 +2,11 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  25 Aug 2014; Manuel Rüger <mrueg@gentoo.org> pwstore-0.20140414.ebuild:
+  [app-admin/pwstore] Add DESC and HOMEPAGE.
+
 *pwstore-0.20140414 (22 Aug 2014)
 
   22 Aug 2014; Hans de Graaff <graaff@gentoo.org> +pwstore-0.20140414.ebuild,
   +metadata.xml:
   Initial import. Used as test ebuild for the new ruby-single.eclass.
-
