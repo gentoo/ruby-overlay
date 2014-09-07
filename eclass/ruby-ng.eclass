@@ -72,7 +72,7 @@
 # (e.g. selenium's firefox driver extension). When set this argument is
 # passed to "grep -E" to remove reporting of these shared objects.
 
-inherit eutils java-utils-2 multilib toolchain-funcs
+inherit eutils java-utils-2 multilib toolchain-funcs ruby-utils
 
 EXPORT_FUNCTIONS src_unpack src_prepare src_configure src_compile src_test src_install pkg_setup
 
@@ -87,8 +87,6 @@ case ${EAPI} in
 	*)
 		die "Unknown EAPI=${EAPI} for ruby-ng.eclass"
 esac
-
-inherit ruby-utils
 
 # @FUNCTION: ruby_implementation_depend
 # @USAGE: target [comparator [version]]
