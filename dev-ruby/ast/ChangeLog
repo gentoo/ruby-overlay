@@ -1,8 +1,0 @@
-# ChangeLog for dev-ruby/ast
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*ast-1.1.0 (16 Jan 2014)
-
-  16 Jan 2014; Peter Wilmott <p@p8952.info> +ast-1.1.0.ebuild, +metadata.xml:
-  dev-ruby/ast: dependency for rubocop
