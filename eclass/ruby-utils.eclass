@@ -39,7 +39,7 @@ if [[ ! ${_RUBY_UTILS} ]]; then
 RUBY_TARGETS_PREFERENCE="ruby20 ruby19 "
 
 # All other active ruby targets
-RUBY_TARGETS_PREFERENCE+="ruby21 rbx jruby "
+RUBY_TARGETS_PREFERENCE+="ruby21 ruby22 "
 
 
 _ruby_implementation_depend() {
