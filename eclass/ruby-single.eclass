@@ -25,6 +25,8 @@ case "${EAPI:-0}" in
 		;;
 esac
 
+if [[ ! ${_RUBY_SINGLE} ]]; then
+
 inherit ruby-utils
 
 # @ECLASS-VARIABLE: USE_RUBY
@@ -69,3 +71,7 @@ _ruby_single_set_globals() {
 	RUBY_DEPS=$(_ruby_single_implementations_depend)
 }
 _ruby_single_set_globals
+
+
+_RUBY_SINGLE=1
+fi
