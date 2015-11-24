@@ -2,7 +2,7 @@
 This includes many ebuilds, that currently aren't ready or suitable for the main tree.
 
 This overlay is managed by the [Gentoo](http://www.gentoo.org)
-[Ruby](https://wiki.gentoo.org/wiki/Project:Ruby) team. It's purpose
+[Ruby](https://wiki.gentoo.org/wiki/Project:Ruby) team. Its purpose
 is to experiment with new ruby packages and eclasses, and to serve as
 a way to allow users to submit new ebuilds to the main Gentoo tree.
 
@@ -10,4 +10,3 @@ Please read our [Packaging RubyGems](https://wiki.gentoo.org/wiki/Project:Ruby/P
 
 ### Repoman status
 [![Repoman Status](https://travis-ci.org/gentoo/ruby-overlay.png)](https://travis-ci.org/gentoo/ruby-overlay)
-
