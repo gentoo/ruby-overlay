@@ -1,0 +1,13 @@
+certificate version 0.1
+pusher EFDBB3EC 1503895034 +0200
+pushee git+ssh://git.gentoo.org/proj/ruby-overlay.git
+nonce 1503895034-3e2959849d6749b92bdc
+
+fafd3201b03d31f9fdb5c5c81d404a58d8d0a7f7 882669f4b1af1195fef6fc988d6466279f362187 refs/heads/master
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABEIAB0WIQSx3yP+V82AqODatGmIg/pWowio1wUCWaOd+gAKCRCIg/pWowio
+1zXaAPkBpvHJgk3YMM6fhObwL5dL9aCUialjojxiPT5UoYgngwD/RItCAHaOmHwf
++t1BwFvIfiVESPwFed6SJ9oOdXscouU=
+=UMZB
+-----END PGP SIGNATURE-----
