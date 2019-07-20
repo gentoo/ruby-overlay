@@ -23,5 +23,5 @@ RESTRICT="test"
 
 ruby_add_rdepend "
 	>=dev-ruby/excon-0.47.0
-	dev-ruby/json
+	dev-ruby/json:*
 "
