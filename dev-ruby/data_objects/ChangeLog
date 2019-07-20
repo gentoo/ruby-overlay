@@ -1,9 +1,0 @@
-# ChangeLog for dev-ruby/data_objects
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*data_objects-0.10.13 (29 Oct 2013)
-
-  29 Oct 2013; Peter Wilmott <p@p8952.info> +data_objects-0.10.13.ebuild,
-  +files/data_objects.gemspec, +metadata.xml:
-  dev-ruby/data_objects: Initial commit, dependency for datamapper(dm)-1.2.x
