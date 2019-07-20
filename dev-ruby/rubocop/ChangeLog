@@ -1,9 +1,0 @@
-# ChangeLog for dev-ruby/rubocop
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
-
-*rubocop-0.16.0 (16 Jan 2014)
-
-  16 Jan 2014; Peter Wilmott <p@p8952.info> +metadata.xml,
-  +rubocop-0.16.0.ebuild:
-  dev-ruby/rubocop: Automatic Ruby code style checking tool
