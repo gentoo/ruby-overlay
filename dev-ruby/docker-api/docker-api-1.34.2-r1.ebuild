@@ -1,11 +1,10 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=8
 
-USE_RUBY="ruby24 ruby25 ruby26"
+USE_RUBY="ruby27 ruby30"
 
-RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 RUBY_FAKEGEM_EXTRADOC="README.md"
 
 inherit ruby-fakegem
