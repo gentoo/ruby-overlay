@@ -1,16 +1,18 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
-USE_RUBY="ruby24 ruby25 ruby26"
+USE_RUBY="ruby27 ruby30"
+
+RUBY_FAKEGEM_RECIPE_DOC="none"
 
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG README.rdoc"
 
 inherit ruby-fakegem
 
 DESCRIPTION="A lightweight database toolkit for Ruby"
-HOMEPAGE="http://sequel.jeremyevans.net/"
+HOMEPAGE="https://sequel.jeremyevans.net/"
 
 LICENSE="MIT"
 SLOT="0"
